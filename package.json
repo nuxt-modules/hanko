@@ -38,6 +38,7 @@
     "lint:eslint": "eslint --fix",
     "lint:prettier": "prettier --write --loglevel warn",
     "test": "vitest run",
+    "test:types": "tsc --noEmit",
     "test:watch": "vitest watch"
   },
   "dependencies": {
