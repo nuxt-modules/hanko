@@ -2,8 +2,6 @@ import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 import { register } from '@teamhanko/hanko-elements'
 
 export default defineNuxtPlugin(nuxtApp => {
-  nuxtApp.vueApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('hanko-')
-
   const config = useRuntimeConfig()
 
   nuxtApp.hook('app:mounted', async () => {

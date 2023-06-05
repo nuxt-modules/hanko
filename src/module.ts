@@ -39,6 +39,9 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
+    const isCustomElement = nuxt.options.vue.compilerOptions.isCustomElement
+    nuxt.options.vue.compilerOptions.isCustomElement = (tag: string) => tag.startsWith("hanko-") || isCustomElement?.(tag)
+
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
       hanko: {
         apiURL: options.apiURL,
@@ -52,8 +55,8 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     if (options.registerComponents) {
+      addPlugin(resolver.resolve('./runtime/plugins/custom-elements'))
       addPlugin(resolver.resolve('./runtime/plugins/components.client'))
-      addPlugin(resolver.resolve('./runtime/plugins/components.server'))
       nuxt.hook('prepare:types', ({ references }) => {
         references.push({
           path: resolver.resolve('./runtime/components.d.ts'),

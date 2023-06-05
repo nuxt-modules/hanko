@@ -3,9 +3,4 @@ export default defineNuxtConfig({
   hanko: {
     apiURL: ''
   },
-  vue: {
-    compilerOptions: {
-      isCustomElement: (tag) => tag.startsWith("hanko-")
-    }
-  }
 })
