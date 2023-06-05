@@ -1,8 +1,17 @@
 {
   "name": "nuxt-hanko",
-  "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/nuxt-hanko",
+  "version": "0.0.1",
+  "description": "Hanko integration for Nuxt",
+  "keywords": [
+    "authentication",
+    "webauthn",
+    "passkey",
+    "hanko",
+    "nuxt",
+    "module",
+    "nuxt-module"
+  ],
+  "repository": "danielroe/nuxt-hanko",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -41,7 +50,9 @@
     "@types/node": "^18",
     "changelogen": "^0.5.3",
     "eslint": "^8.41.0",
+    "h3": "^1.6.6",
     "nuxt": "^3.5.1",
     "vitest": "^0.31.1"
-  }
+  },
+  "packageManager": "pnpm@8.6.0"
 }

@@ -40,6 +40,9 @@ devDependencies:
   eslint:
     specifier: ^8.41.0
     version: 8.41.0
+  h3:
+    specifier: ^1.6.6
+    version: 1.6.6
   nuxt:
     specifier: ^3.5.1
     version: 3.5.1(@types/node@18.0.0)(eslint@8.41.0)(rollup@3.23.1)(typescript@5.1.3)
