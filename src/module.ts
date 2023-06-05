@@ -42,7 +42,8 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url)
 
     const isCustomElement = nuxt.options.vue.compilerOptions.isCustomElement
-    nuxt.options.vue.compilerOptions.isCustomElement = (tag: string) => tag.startsWith('hanko-') || isCustomElement?.(tag) || false
+    nuxt.options.vue.compilerOptions.isCustomElement = (tag: string) =>
+      tag.startsWith('hanko-') || isCustomElement?.(tag) || false
 
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
       hanko: {
@@ -69,7 +70,7 @@ export default defineNuxtModule<ModuleOptions>({
     if (options.augmentContext) {
       addServerHandler({
         middleware: true,
-        handler: resolver.resolve('./runtime/server/middleware/auth')
+        handler: resolver.resolve('./runtime/server/middleware/auth'),
       })
       nuxt.hook('prepare:types', ({ references }) => {
         references.push({
@@ -93,13 +94,13 @@ export default defineNuxtModule<ModuleOptions>({
 
     addTemplate({
       filename: 'hanko-elements.mjs',
-      getContents: () => `export const Hanko = () => null`
+      getContents: () => `export const Hanko = () => null`,
     })
 
     nuxt.hook('vite:extendConfig', (config, { isServer }) => {
       if (isServer) {
         config.resolve!.alias = defu(config.resolve!.alias, {
-          '@teamhanko/hanko-elements': '#build/hanko-elements'
+          '@teamhanko/hanko-elements': '#build/hanko-elements',
         })
       }
     })
