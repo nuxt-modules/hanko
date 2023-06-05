@@ -19,7 +19,7 @@ export default defineNuxtRouteMiddleware(async to => {
     return
   }
 
-  const hanko = useHanko()
+  const hanko = useHanko()!
 
   if ((await hanko.user.getCurrent().catch(() => null)) && to.path !== redirects.home) {
     return navigateTo(redirects.home)
