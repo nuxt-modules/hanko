@@ -5,7 +5,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
 
   if (process.server) {
     const event = useRequestEvent()
-    
+
     if (!event.context.hanko?.sub && to.path !== redirects.login) {
       return navigateTo(redirects.login)
     }
@@ -13,11 +13,11 @@ export default defineNuxtRouteMiddleware(async (to) => {
   }
 
   const hanko = useHanko()
-  
+
   if (!(await hanko.user.getCurrent().catch(() => null)) && to.path !== redirects.login) {
     return navigateTo(redirects.login)
   }
-  
+
   const unsubscribe = hanko.onUserLoggedOut(() => { navigateTo(redirects.login) })
   onBeforeRouteLeave(() => { unsubscribe() })
 })

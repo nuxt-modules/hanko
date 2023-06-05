@@ -1,7 +1,8 @@
 import type { JWTPayload } from "jose"
+import { defineEventHandler, verifyHankoEvent } from '#imports'
 
 export default defineEventHandler(async event => {
-  event.context.hanko = await verifyHankoEvent(event).catch((e) => undefined)
+  event.context.hanko = await verifyHankoEvent(event).catch(() => undefined)
 })
 
 declare module 'h3' {

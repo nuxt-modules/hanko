@@ -1,12 +1,13 @@
 import { defineNuxtModule, addPlugin, createResolver, addImportsSources, addRouteMiddleware } from '@nuxt/kit'
 import { defu } from 'defu'
 
-// Module options TypeScript interface definition
 export interface ModuleOptions {
   /**
    * This can be overridden at runtime by setting NUXT_PUBLIC_HANKO_API_URL
    */
   apiURL?: string
+  registerComponents?: boolean
+  augmentContext?: boolean
   redirects?: {
     login?: string
     home?: string
@@ -19,9 +20,10 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-hanko',
     configKey: 'hanko'
   },
-  // Default configuration options of the Nuxt module
   defaults: {
     apiURL: '',
+    registerComponents: true,
+    augmentContext: true,
     redirects: {
       login: '/login',
       home: '/',
@@ -43,18 +45,29 @@ export default defineNuxtModule<ModuleOptions>({
       }
     })
 
-    addPlugin(resolver.resolve('./runtime/plugins/components'))
+    if (options.registerComponents) {
+      addPlugin(resolver.resolve('./runtime/plugins/components'))
+      nuxt.hook('prepare:types', ({ references }) => {
+        references.push({
+          path: resolver.resolve('./runtime/components.d.ts')
+        })
+      })
+    }
+
     for (const name of ['logged-in', 'logged-out']) {
       addRouteMiddleware({
         name: `hanko-${name}`,
-        path: resolver.resolve(`./runtime/middleware/${name}`) 
+        path: resolver.resolve(`./runtime/middleware/${name}`)
       })
     }
+
+    // Add Vue composables
     addImportsSources({
       from: resolver.resolve('./runtime/composables/index'),
       imports: ['useHanko']
     })
 
+    // Add Nitro composables
     nuxt.hook('nitro:config', config => {
       config.imports = defu(config.imports, {
         presets: [
@@ -63,12 +76,6 @@ export default defineNuxtModule<ModuleOptions>({
             imports: ['verifyHankoEvent']
           }
         ]
-      })
-    })
-
-    nuxt.hook('prepare:types', ({ references }) => {
-      references.push({
-        path: resolver.resolve('./runtime/components.d.ts')
       })
     })
   }
