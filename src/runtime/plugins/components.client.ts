@@ -1,4 +1,4 @@
-import { defineNuxtPlugin } from '#imports'
+import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 import { register } from '@teamhanko/hanko-elements'
 
 export default defineNuxtPlugin(nuxtApp => {
