@@ -1,4 +1,10 @@
-import { defineNuxtModule, addPlugin, createResolver, addImportsSources, addRouteMiddleware } from '@nuxt/kit'
+import {
+  defineNuxtModule,
+  addPlugin,
+  createResolver,
+  addImportsSources,
+  addRouteMiddleware,
+} from '@nuxt/kit'
 import { defu } from 'defu'
 
 export interface ModuleOptions {
@@ -18,7 +24,7 @@ export interface ModuleOptions {
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-hanko',
-    configKey: 'hanko'
+    configKey: 'hanko',
   },
   defaults: {
     apiURL: '',
@@ -27,29 +33,29 @@ export default defineNuxtModule<ModuleOptions>({
     redirects: {
       login: '/login',
       home: '/',
-      success: '/'
-    }
+      success: '/',
+    },
   },
-  setup (options, nuxt) {
+  setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
       hanko: {
-        apiURL: options.apiURL
-      }
+        apiURL: options.apiURL,
+      },
     })
 
     nuxt.options.appConfig = defu(nuxt.options.appConfig, {
       hanko: {
-        redirects: options.redirects
-      }
+        redirects: options.redirects,
+      },
     })
 
     if (options.registerComponents) {
       addPlugin(resolver.resolve('./runtime/plugins/components'))
       nuxt.hook('prepare:types', ({ references }) => {
         references.push({
-          path: resolver.resolve('./runtime/components.d.ts')
+          path: resolver.resolve('./runtime/components.d.ts'),
         })
       })
     }
@@ -57,14 +63,14 @@ export default defineNuxtModule<ModuleOptions>({
     for (const name of ['logged-in', 'logged-out']) {
       addRouteMiddleware({
         name: `hanko-${name}`,
-        path: resolver.resolve(`./runtime/middleware/${name}`)
+        path: resolver.resolve(`./runtime/middleware/${name}`),
       })
     }
 
     // Add Vue composables
     addImportsSources({
       from: resolver.resolve('./runtime/composables/index'),
-      imports: ['useHanko']
+      imports: ['useHanko'],
     })
 
     // Add Nitro composables
@@ -73,10 +79,10 @@ export default defineNuxtModule<ModuleOptions>({
         presets: [
           {
             from: resolver.resolve('./runtime/server/utils/index'),
-            imports: ['verifyHankoEvent']
-          }
-        ]
+            imports: ['verifyHankoEvent'],
+          },
+        ],
       })
     })
-  }
+  },
 })

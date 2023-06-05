@@ -1,8 +1,8 @@
-import { defineNuxtPlugin }from '#imports' 
-import { register } from "@teamhanko/hanko-elements";
+import { defineNuxtPlugin } from '#imports'
+import { register } from '@teamhanko/hanko-elements'
 
 export default defineNuxtPlugin(nuxtApp => {
-  nuxtApp.vueApp.config.compilerOptions.isCustomElement = (tag) => tag.startsWith("hanko-")
+  nuxtApp.vueApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('hanko-')
 
   const config = useRuntimeConfig()
 

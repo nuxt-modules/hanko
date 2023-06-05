@@ -1,4 +1,4 @@
-import type { JWTPayload } from "jose"
+import type { JWTPayload } from 'jose'
 import { defineEventHandler, verifyHankoEvent } from '#imports'
 
 export default defineEventHandler(async event => {
