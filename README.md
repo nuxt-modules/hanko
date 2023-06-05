@@ -1,94 +1,110 @@
-<!--
-Get your module up and running quickly.
-
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
-- Package name: nuxt-hanko
-- Description: My new Nuxt module
--->
-
-# My Module
+# Nuxt Hanko
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![License][license-src]][license-href]
-[![Nuxt][nuxt-src]][nuxt-href]
+[![Github Actions][github-actions-src]][github-actions-href]
+[![Codecov][codecov-src]][codecov-href]
 
-My new Nuxt module for doing amazing things.
+> [Hanko](https://www.hanko.io/) integration for [Nuxt](https://nuxt.com)
 
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-hanko?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
+- [✨ &nbsp;Changelog](https://github.com/danielroe/nuxt-hanko/blob/main/CHANGELOG.md)
+- [▶️ &nbsp;Online playground](https://stackblitz.com/github/danielroe/nuxt-hanko/tree/main/playground)
 
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- ✨ Easy integration for [Hanko](https://www.hanko.io/)
+- 🧱 Type safety and auto-registration for Hanko web components
+- 💪 Server utilities for full-stack auth
 
-## Quick Setup
+## Installation
 
-1. Add `nuxt-hanko` dependency to your project
+Install and add `nuxt-hanko` to your `nuxt.config`.
 
 ```bash
-# Using pnpm
+# Whichever matches your package manager
 pnpm add -D nuxt-hanko
-
-# Using yarn
-yarn add --dev nuxt-hanko
-
-# Using npm
-npm install --save-dev nuxt-hanko
+npm install -D nuxt-hanko
+yarn add -D nuxt-hanko
 ```
-
-2. Add `nuxt-hanko` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
-  modules: [
-    'nuxt-hanko'
-  ]
+  modules: ['nuxt-hanko'],
+  hanko: {
+    // You can also configure this by setting NUXT_PUBLIC_HANKO_API_URL at runtime
+    apiURL: '<YOUR_API_URL>',
+    // You can also customise these if required
+    // redirects: {
+    //   login: '/login',
+    //   success: '/',
+    //   home: '/'
+    // },
+    // registerComponents: true,
+    // augmentContext: true,
+  }
 })
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+## Usage
 
-## Development
+### Components
 
-```bash
-# Install dependencies
-npm install
+To use, you can use the Hanko components anywhere in your app: `<hanko-auth>`, `<hanko-events>` and `<hanko-profile>`. These are web components that will be rendered on the client-side only. Props are typed.
 
-# Generate type stubs
-npm run dev:prepare
+You can turn auto-registration of components off (if you wish to use Hanko just on the server side or programmatically) with `registerComponents: false`.
 
-# Develop with the playground
-npm run dev
+Check out the [Hanko documentation](https://docs.hanko.io/guides/vue) to learn more.
 
-# Build the playground
-npm run dev:build
-
-# Run ESLint
-npm run lint
-
-# Run Vitest
-npm run test
-npm run test:watch
-
-# Release new version
-npm run release
+```vue
+<template>
+  <hanko-auth />
+</template>
 ```
 
+### Middleware
+
+By default two new route middleware are available in your Nuxt app: `hanko-logged-in` and `hanko-logged-out`.
+
+- `hanko-logged-in` will prevent access to a page unless you are logged in. (It will redirect you to `redirects.login` instead.)
+- `hanko-logged-out` will prevent access to a page unless you are logged out. (It will redirect you to `redirects.success` when you log in, and otherwise to `redirects.home`.)
+
+You can also create your own middleware for full control.
+
+### Auto-imports
+
+`useHanko` is exposed in the Vue part of your app to allow you direct access to the Hanko API. You can access the current user and much more.
+
+### Server utilities
+
+By default you can access a verified JWT context on `event.context.hanko`. (It will be undefined if the user is not logged in.) If you want to handle this yourself you can set `augmentContext: false`.
+
+`verifyHankoEvent` is exposed in the Nitro part of your app to expose the underlying utility used to create `event.context.hanko` if you want to handle things manually.
+
+## 💻 Development
+
+- Clone this repository
+- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
+- Install dependencies using `pnpm install`
+- Stub module with `pnpm dev:prepare`
+- Run `pnpm dev` to start [playground](./playground) in development mode
+
+## Credits
+
+Thanks to [@McPizza0](https://github.com/McPizza0) for the push to make the module!
+
+## License
+
+Made with ❤️
+
+Published under the [MIT License](./LICENCE).
+
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-hanko/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-hanko?style=flat-square
 [npm-version-href]: https://npmjs.com/package/nuxt-hanko
-
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-hanko.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-hanko?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/nuxt-hanko
-
-[license-src]: https://img.shields.io/npm/l/nuxt-hanko.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/nuxt-hanko
-
-[nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
-[nuxt-href]: https://nuxt.com
+[github-actions-src]: https://img.shields.io/github/actions/workflow/status/danielroe/nuxt-hanko/ci.yml?branch=main
+[github-actions-href]: https://github.com/danielroe/nuxt-hanko/actions?query=workflow%3Aci
+[codecov-src]: https://img.shields.io/codecov/c/gh/danielroe/nuxt-hanko/main?style=flat-square
+[codecov-href]: https://codecov.io/gh/danielroe/nuxt-hanko
