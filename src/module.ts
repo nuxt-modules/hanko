@@ -52,7 +52,8 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     if (options.registerComponents) {
-      addPlugin(resolver.resolve('./runtime/plugins/components'))
+      addPlugin(resolver.resolve('./runtime/plugins/components.client'))
+      addPlugin(resolver.resolve('./runtime/plugins/components.server'))
       nuxt.hook('prepare:types', ({ references }) => {
         references.push({
           path: resolver.resolve('./runtime/components.d.ts'),
