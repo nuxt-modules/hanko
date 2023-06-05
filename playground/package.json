@@ -1,4 +1,7 @@
 {
   "private": true,
-  "name": "nuxt-hanko-playground"
+  "name": "nuxt-hanko-playground",
+  "dependencies": {
+    "nuxt-hanko": "latest"
+  }
 }

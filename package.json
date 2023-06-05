@@ -61,5 +61,8 @@
     "prettier": "2.8.8",
     "vitest": "0.31.1"
   },
+  "resolutions": {
+    "nuxt-hanko": "link:."
+  },
   "packageManager": "pnpm@8.6.0"
 }
