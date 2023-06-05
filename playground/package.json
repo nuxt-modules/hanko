@@ -1,7 +1,14 @@
 {
   "private": true,
   "name": "nuxt-hanko-playground",
-  "dependencies": {
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "devDependencies": {
+    "nuxt": "3.5.2",
     "nuxt-hanko": "latest"
   }
 }
