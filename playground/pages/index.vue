@@ -8,20 +8,25 @@ function logout() {
   hanko!.user.logout()
 }
 
-function tryAuthenticatedRequest() {
-  $fetch('/api/test')
-}
+const result = ref()
 
+async function tryAuthenticatedRequest() {
+  result.value = null
+  result.value = await $fetch('/api/test')
+}
 </script>
 
 <template>
-  <div>
-    Logged in!
+  <main>
+    <h1>
+      Logged in!
+    </h1>
     <button @click="logout">
       Log me out
     </button>
     <button @click="tryAuthenticatedRequest">
       Try auth request
     </button>
-  </div>
+    <pre>{{ result }}</pre>
+  </main>
 </template>
