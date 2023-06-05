@@ -8,7 +8,7 @@
 > [Hanko](https://www.hanko.io/) integration for [Nuxt](https://nuxt.com)
 
 - [✨ &nbsp;Changelog](https://github.com/danielroe/nuxt-hanko/blob/main/CHANGELOG.md)
-- [▶️ &nbsp;Online playground](https://stackblitz.com/github/danielroe/nuxt-hanko/tree/main/playground)
+<!-- - [▶️ &nbsp;Online playground](https://stackblitz.com/github/danielroe/nuxt-hanko/tree/main/playground) -->
 
 ## Features
 
