@@ -5,6 +5,7 @@ import {
   addImportsSources,
   addRouteMiddleware,
   addServerHandler,
+  addTemplate,
 } from '@nuxt/kit'
 import { defu } from 'defu'
 
@@ -41,7 +42,7 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url)
 
     const isCustomElement = nuxt.options.vue.compilerOptions.isCustomElement
-    nuxt.options.vue.compilerOptions.isCustomElement = (tag: string) => tag.startsWith("hanko-") || isCustomElement?.(tag)
+    nuxt.options.vue.compilerOptions.isCustomElement = (tag: string) => tag.startsWith('hanko-') || isCustomElement?.(tag) || false
 
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
       hanko: {
@@ -88,6 +89,19 @@ export default defineNuxtModule<ModuleOptions>({
     addImportsSources({
       from: resolver.resolve('./runtime/composables/index'),
       imports: ['useHanko'],
+    })
+
+    addTemplate({
+      filename: 'hanko-elements.mjs',
+      getContents: () => `export const Hanko = () => null`
+    })
+
+    nuxt.hook('vite:extendConfig', (config, { isServer }) => {
+      if (isServer) {
+        config.resolve!.alias = defu(config.resolve!.alias, {
+          '@teamhanko/hanko-elements': '#build/hanko-elements'
+        })
+      }
     })
 
     // Add Nitro composables
