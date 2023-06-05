@@ -74,7 +74,7 @@ jobs:
         run: pnpm test:types
 
       - name: 🛠 Build project
-        run: pnpm build
+        run: pnpm prepack
 
       - name: 🟩 Coverage
         uses: codecov/codecov-action@v3
