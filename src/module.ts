@@ -4,6 +4,7 @@ import {
   createResolver,
   addImportsSources,
   addRouteMiddleware,
+  addServerHandler,
 } from '@nuxt/kit'
 import { defu } from 'defu'
 
@@ -60,6 +61,18 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.hook('prepare:types', ({ references }) => {
         references.push({
           path: resolver.resolve('./runtime/components.d.ts'),
+        })
+      })
+    }
+
+    if (options.augmentContext) {
+      addServerHandler({
+        middleware: true,
+        handler: resolver.resolve('./runtime/server/middleware/auth')
+      })
+      nuxt.hook('prepare:types', ({ references }) => {
+        references.push({
+          path: resolver.resolve('./runtime/auth.d.ts'),
         })
       })
     }
