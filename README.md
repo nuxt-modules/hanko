@@ -72,7 +72,7 @@ You can also create your own middleware for full control.
 
 ### Auto-imports
 
-`useHanko` is exposed in the Vue part of your app to allow you direct access to the Hanko API. You can access the current user and much more.
+`useHanko` is exposed in the Vue part of your app to allow you direct access to the Hanko API. You can access the current user and much more. **Note**: It will return `null` on the server.
 
 ### Server utilities
 
