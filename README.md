@@ -37,11 +37,13 @@ export default defineNuxtConfig({
     // redirects: {
     //   login: '/login',
     //   success: '/',
-    //   home: '/'
+    //   home: '/',
+    //   followRedirect: true //automatically redirects unauthed users back to prefious page after authenticating
     // },
     // registerComponents: true,
     // augmentContext: true,
-  }
+    // cookieName: 'hanko'
+  },
 })
 ```
 
