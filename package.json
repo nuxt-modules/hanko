@@ -45,7 +45,8 @@
     "@nuxt/kit": "^3.5.3",
     "@teamhanko/hanko-elements": "0.5.5-beta",
     "defu": "^6.1.2",
-    "jose": "^4.14.4"
+    "jose": "^4.14.4",
+    "ufo": "^1.1.2"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "0.1.1",
