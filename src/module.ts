@@ -16,7 +16,7 @@ export interface ModuleOptions {
   apiURL?: string
   registerComponents?: boolean
   augmentContext?: boolean
-  cookieName?: string
+  // cookieName?: string - await upstream issue fix: https://github.com/teamhanko/hanko/issues/243
   redirects?: {
     login?: string
     home?: string
@@ -34,7 +34,7 @@ export default defineNuxtModule<ModuleOptions>({
     apiURL: '',
     registerComponents: true,
     augmentContext: true,
-    cookieName: 'hanko',
+    // cookieName: 'hanko',  - await upstream issue fix: https://github.com/teamhanko/hanko/issues/243
     redirects: {
       login: '/login',
       home: '/',
@@ -52,7 +52,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
       hanko: {
         apiURL: options.apiURL,
-        cookieName: options.cookieName,
+        cookieName: 'hanko',
       },
     })
 

@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     // },
     // registerComponents: true,
     // augmentContext: true,
-    // cookieName: 'hanko'
+    // cookieName: 'hanko'  // Not implemented - awaiting upstream issue fix: https://github.com/teamhanko/hanko/issues/243
   },
 })
 ```
