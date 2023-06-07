@@ -1,3 +1,4 @@
+import { withQuery } from 'ufo'
 import {
   defineNuxtRouteMiddleware,
   navigateTo,
@@ -14,7 +15,7 @@ export default defineNuxtRouteMiddleware(async to => {
     const event = useRequestEvent()
 
     if (!event.context.hanko?.sub && to.path !== redirects.login) {
-      return navigateTo(redirects.login)
+      return navigateTo(withQuery(redirects.login, { redirect: to.path }))
     }
     return
   }
@@ -22,11 +23,11 @@ export default defineNuxtRouteMiddleware(async to => {
   const hanko = useHanko()!
 
   if (!(await hanko.user.getCurrent().catch(() => null)) && to.path !== redirects.login) {
-    return navigateTo(redirects.login)
+    return navigateTo(withQuery(redirects.login, { redirect: to.path }))
   }
 
   const removeHankoHook = hanko.onUserLoggedOut(() => {
-    navigateTo(redirects.login)
+    return navigateTo(withQuery(redirects.login, { redirect: to.path }))
   })
   const removeRouterHook = useRouter().beforeEach(() => {
     removeHankoHook()

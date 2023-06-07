@@ -8,8 +8,8 @@ await setup({
 
 describe('ssr', async () => {
   it('redirects to the login page', async () => {
-    const res = await fetch('/', { redirect: 'manual' })
-    expect(res.headers.get('location')).toBe('/login')
+    const res = await fetch('/protected', { redirect: 'manual' })
+    expect(res.headers.get('location')).toBe('/login?redirect=/protected')
   })
 
   it('respects custom elements', async () => {

@@ -3,10 +3,12 @@ import { createRemoteJWKSet, jwtVerify } from 'jose'
 import { useRuntimeConfig } from '#imports'
 
 export async function verifyHankoEvent(event: H3Event) {
-  const jwksHost = useRuntimeConfig().public.hanko.apiURL
+  const hankoConfig = useRuntimeConfig().public.hanko
+  const jwksHost = hankoConfig.apiURL
   const JWKS = createRemoteJWKSet(new URL(`${jwksHost}/.well-known/jwks.json`))
 
-  const jwt = getHeader(event, 'authorization')?.split(' ').pop() || getCookie(event, 'hanko')
+  const cookieName = hankoConfig.cookieName
+  const jwt = getHeader(event, 'authorization')?.split(' ').pop() || getCookie(event, cookieName)
 
   if (!jwt) {
     throw createError({
