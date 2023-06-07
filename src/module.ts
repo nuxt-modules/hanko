@@ -58,7 +58,9 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     if (options.registerComponents) {
-      addPlugin(resolver.resolve('./runtime/plugins/custom-elements'))
+      if (nuxt.options.vue.runtimeCompiler) {
+        addPlugin(resolver.resolve('./runtime/plugins/custom-elements'))
+      }
       addPlugin(resolver.resolve('./runtime/plugins/components.client'))
       nuxt.hook('prepare:types', ({ references }) => {
         references.push({
