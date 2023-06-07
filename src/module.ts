@@ -16,10 +16,12 @@ export interface ModuleOptions {
   apiURL?: string
   registerComponents?: boolean
   augmentContext?: boolean
+  cookieName?: string
   redirects?: {
     login?: string
     home?: string
     success?: string
+    followRedirect?: boolean
   }
 }
 
@@ -32,10 +34,12 @@ export default defineNuxtModule<ModuleOptions>({
     apiURL: '',
     registerComponents: true,
     augmentContext: true,
+    cookieName: 'hanko',
     redirects: {
       login: '/login',
       home: '/',
       success: '/',
+      followRedirect: true,
     },
   },
   setup(options, nuxt) {
@@ -48,6 +52,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
       hanko: {
         apiURL: options.apiURL,
+        cookieName: options.cookieName,
       },
     })
 
