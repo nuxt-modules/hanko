@@ -1,7 +1,7 @@
 import {
   defineNuxtRouteMiddleware,
   navigateTo,
-  onBeforeRouteLeave,
+  useRouter,
   useAppConfig,
   useHanko,
   useRequestEvent,
@@ -25,10 +25,11 @@ export default defineNuxtRouteMiddleware(async to => {
     return navigateTo(redirects.home)
   }
 
-  const unsubscribe = hanko.onAuthFlowCompleted(() => {
+  const removeHankoHook = hanko.onAuthFlowCompleted(() => {
     navigateTo(redirects.success)
   })
-  onBeforeRouteLeave(() => {
-    unsubscribe()
+  const removeRouterHook = useRouter().beforeEach(() => {
+    removeHankoHook()
+    removeRouterHook()
   })
 })
