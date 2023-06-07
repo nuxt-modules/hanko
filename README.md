@@ -38,11 +38,10 @@ export default defineNuxtConfig({
     //   login: '/login',
     //   success: '/',
     //   home: '/',
-    //   followRedirect: true //automatically redirects unauthed users back to prefious page after authenticating
+    //   followRedirect: true
     // },
     // registerComponents: true,
     // augmentContext: true,
-    // cookieName: 'hanko'  // Not implemented - awaiting upstream issue fix: https://github.com/teamhanko/hanko/issues/243
   },
 })
 ```
@@ -67,7 +66,7 @@ Check out the [Hanko documentation](https://docs.hanko.io/guides/vue) to learn m
 
 By default two new route middleware are available in your Nuxt app: `hanko-logged-in` and `hanko-logged-out`.
 
-- `hanko-logged-in` will prevent access to a page unless you are logged in. (It will redirect you to `redirects.login` instead.)
+- `hanko-logged-in` will prevent access to a page unless you are logged in. (It will redirect you to `redirects.login` instead, and then redirect back to this page once you login. You can disable this behaviour by setting `redirects.followRedirect` to `false`.)
 - `hanko-logged-out` will prevent access to a page unless you are logged out. (It will redirect you to `redirects.success` when you log in, and otherwise to `redirects.home`.)
 
 You can also create your own middleware for full control.
