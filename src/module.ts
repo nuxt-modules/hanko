@@ -109,6 +109,9 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Add Nitro composables
     nuxt.hook('nitro:config', config => {
+      config.externals = defu(config.externals, {
+        inline: [resolver.resolve('./runtime/server')],
+      })
       config.imports = defu(config.imports, {
         presets: [
           {

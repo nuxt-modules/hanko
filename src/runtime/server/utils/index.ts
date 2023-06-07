@@ -1,4 +1,4 @@
-import { H3Event, getHeader } from 'h3'
+import { H3Event, createError, getCookie, getHeader } from 'h3'
 import { createRemoteJWKSet, jwtVerify } from 'jose'
 import { useRuntimeConfig } from '#imports'
 
