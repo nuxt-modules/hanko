@@ -2,8 +2,6 @@
 definePageMeta({
   middleware: ['hanko-logged-out']
 })
-const redirectPath = ref<string | null>(null)
-redirectPath.value = useRoute().query.redirect as string | null
 </script>
 
 <template>
