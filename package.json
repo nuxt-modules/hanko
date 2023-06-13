@@ -1,6 +1,6 @@
 {
   "name": "nuxt-hanko",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Hanko integration for Nuxt",
   "keywords": [
     "authentication",
