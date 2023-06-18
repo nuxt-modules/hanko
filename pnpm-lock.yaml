@@ -38,7 +38,7 @@ importers:
         version: 3.5.3(rollup@3.23.0)
       '@nuxt/test-utils':
         specifier: 3.5.3
-        version: 3.5.3(playwright@1.34.3)(rollup@3.23.0)(vitest@0.32.2)(vue@3.3.4)
+        version: 3.5.3(playwright@1.35.1)(rollup@3.23.0)(vitest@0.32.2)(vue@3.3.4)
       '@types/node':
         specifier: 18.16.18
         version: 18.16.18
@@ -58,14 +58,14 @@ importers:
         specifier: 3.5.3
         version: 3.5.3(@types/node@18.16.18)(eslint@8.42.0)(rollup@3.23.0)(typescript@5.1.3)
       playwright:
-        specifier: 1.34.3
-        version: 1.34.3
+        specifier: 1.35.1
+        version: 1.35.1
       prettier:
         specifier: 2.8.8
         version: 2.8.8
       vitest:
         specifier: 0.32.2
-        version: 0.32.2(playwright@1.34.3)
+        version: 0.32.2(playwright@1.35.1)
 
   playground:
     devDependencies:
@@ -844,7 +844,7 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/test-utils@3.5.3(playwright@1.34.3)(rollup@3.23.0)(vitest@0.32.2)(vue@3.3.4):
+  /@nuxt/test-utils@3.5.3(playwright@1.35.1)(rollup@3.23.0)(vitest@0.32.2)(vue@3.3.4):
     resolution: {integrity: sha512-ujkOrn3Qvd+6TREsg4h6Vm1YbPgwl70qh9s6jQiEIGhaH9wqXUUgbHEdWelUMeRO+jbV1X4rtd7Sdww/rfR5lA==}
     engines: {node: ^14.18.0 || >=16.10.0}
     peerDependencies:
@@ -868,9 +868,9 @@ packages:
       get-port-please: 3.0.1
       ofetch: 1.0.1
       pathe: 1.1.1
-      playwright: 1.34.3
+      playwright: 1.35.1
       ufo: 1.1.2
-      vitest: 0.32.2(playwright@1.34.3)
+      vitest: 0.32.2(playwright@1.35.1)
       vue: 3.3.4
     transitivePeerDependencies:
       - rollup
@@ -1412,7 +1412,7 @@ packages:
       std-env: 3.3.3
       test-exclude: 6.0.0
       v8-to-istanbul: 9.1.0
-      vitest: 0.32.2(playwright@1.34.3)
+      vitest: 0.32.2(playwright@1.35.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4236,19 +4236,19 @@ packages:
       mlly: 1.3.0
       pathe: 1.1.1
 
-  /playwright-core@1.34.3:
-    resolution: {integrity: sha512-2pWd6G7OHKemc5x1r1rp8aQcpvDh7goMBZlJv6Co5vCNLVcQJdhxRL09SGaY6HcyHH9aT4tiynZabMofVasBYw==}
-    engines: {node: '>=14'}
+  /playwright-core@1.35.1:
+    resolution: {integrity: sha512-pNXb6CQ7OqmGDRspEjlxE49w+4YtR6a3X6mT1hZXeJHWmsEz7SunmvZeiG/+y1yyMZdHnnn73WKYdtV1er0Xyg==}
+    engines: {node: '>=16'}
     hasBin: true
     dev: true
 
-  /playwright@1.34.3:
-    resolution: {integrity: sha512-UOOVE4ZbGfGkP1KVqWTdXOmm8Pw2pBhfbmlqKMkpiRCQjL5W+J+xRQXpgutFr0iM4pWl8g0GyyASMsqjQfFohw==}
-    engines: {node: '>=14'}
+  /playwright@1.35.1:
+    resolution: {integrity: sha512-NbwBeGJLu5m7VGM0+xtlmLAH9VUfWwYOhUi/lSEDyGg46r1CA9RWlvoc5yywxR9AzQb0mOCm7bWtOXV7/w43ZA==}
+    engines: {node: '>=16'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      playwright-core: 1.34.3
+      playwright-core: 1.35.1
     dev: true
 
   /postcss-calc@9.0.1(postcss@8.4.24):
@@ -5605,7 +5605,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest@0.32.2(playwright@1.34.3):
+  /vitest@0.32.2(playwright@1.35.1):
     resolution: {integrity: sha512-hU8GNNuQfwuQmqTLfiKcqEhZY72Zxb7nnN07koCUNmntNxbKQnVbeIS6sqUgR3eXSlbOpit8+/gr1KpqoMgWCQ==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -5654,7 +5654,7 @@ packages:
       magic-string: 0.30.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      playwright: 1.34.3
+      playwright: 1.35.1
       std-env: 3.3.3
       strip-literal: 1.0.1
       tinybench: 2.5.0
