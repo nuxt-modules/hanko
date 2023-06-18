@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['nuxt-hanko'],
+  modules: ['@nuxtjs/hanko'],
   hanko: {
     // You need to provide the Hanko API URL in order for it to work
     apiURL: '',

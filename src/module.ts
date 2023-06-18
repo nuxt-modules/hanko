@@ -27,7 +27,7 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nuxt-hanko',
+    name: '@nuxtjs/hanko',
     configKey: 'hanko',
   },
   defaults: {

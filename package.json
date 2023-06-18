@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-hanko",
+  "name": "@nuxtjs/hanko",
   "version": "0.2.1",
   "description": "Hanko integration for Nuxt",
   "keywords": [
@@ -11,7 +11,7 @@
     "module",
     "nuxt-module"
   ],
-  "repository": "danielroe/nuxt-hanko",
+  "repository": "nuxt-modules/hanko",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -64,7 +64,7 @@
     "vitest": "0.32.2"
   },
   "resolutions": {
-    "nuxt-hanko": "link:."
+    "@nuxtjs/hanko": "link:."
   },
   "packageManager": "pnpm@8.6.2"
 }

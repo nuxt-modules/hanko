@@ -7,8 +7,8 @@
 
 > [Hanko](https://www.hanko.io/) integration for [Nuxt](https://nuxt.com)
 
-- [✨ &nbsp;Changelog](https://github.com/danielroe/nuxt-hanko/blob/main/CHANGELOG.md)
-<!-- - [▶️ &nbsp;Online playground](https://stackblitz.com/github/danielroe/nuxt-hanko/tree/main/playground) -->
+- [✨ &nbsp;Changelog](https://github.com/nuxt-modules/hanko/blob/main/CHANGELOG.md)
+<!-- - [▶️ &nbsp;Online playground](https://stackblitz.com/github/nuxt-modules/hanko/tree/main/playground) -->
 
 ## Features
 
@@ -18,18 +18,18 @@
 
 ## Installation
 
-Install and add `nuxt-hanko` to your `nuxt.config`.
+Install and add `@nuxtjs/hanko` to your `nuxt.config`.
 
 ```bash
 # Whichever matches your package manager
-pnpm add -D nuxt-hanko
-npm install -D nuxt-hanko
-yarn add -D nuxt-hanko
+pnpm add -D @nuxtjs/hanko
+npm install -D @nuxtjs/hanko
+yarn add -D @nuxtjs/hanko
 ```
 
 ```js
 export default defineNuxtConfig({
-  modules: ['nuxt-hanko'],
+  modules: ['@nuxtjs/hanko'],
   hanko: {
     // You can also configure this by setting NUXT_PUBLIC_HANKO_API_URL at runtime
     apiURL: '<YOUR_API_URL>',
@@ -101,11 +101,11 @@ Published under the [MIT License](./LICENCE).
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-hanko?style=flat-square
-[npm-version-href]: https://npmjs.com/package/nuxt-hanko
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-hanko?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/nuxt-hanko
-[github-actions-src]: https://img.shields.io/github/actions/workflow/status/danielroe/nuxt-hanko/ci.yml?branch=main
-[github-actions-href]: https://github.com/danielroe/nuxt-hanko/actions?query=workflow%3Aci
-[codecov-src]: https://img.shields.io/codecov/c/gh/danielroe/nuxt-hanko/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/danielroe/nuxt-hanko
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/hanko?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/hanko
+[npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/hanko?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/hanko
+[github-actions-src]: https://img.shields.io/github/actions/workflow/status/nuxt-modules/hanko/ci.yml?branch=main
+[github-actions-href]: https://github.com/nuxt-modules/hanko/actions?query=workflow%3Aci
+[codecov-src]: https://img.shields.io/codecov/c/gh/nuxt-modules/hanko/main?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-modules/hanko

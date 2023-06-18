@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  nuxt-hanko: link:.
+  @nuxtjs/hanko: link:.
 
 importers:
 
@@ -72,7 +72,7 @@ importers:
       nuxt:
         specifier: 3.5.3
         version: 3.5.3(@types/node@18.16.18)(eslint@8.42.0)(rollup@3.23.0)(typescript@5.1.3)
-      nuxt-hanko:
+      @nuxtjs/hanko:
         specifier: link:..
         version: link:..
 
