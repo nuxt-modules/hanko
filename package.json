@@ -64,7 +64,8 @@
     "vitest": "0.33.0"
   },
   "resolutions": {
-    "@nuxtjs/hanko": "link:."
+    "@nuxtjs/hanko": "link:.",
+    "@nuxt/kit": "3.5.3"
   },
   "packageManager": "pnpm@8.6.6"
 }

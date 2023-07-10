@@ -6,13 +6,14 @@ settings:
 
 overrides:
   '@nuxtjs/hanko': link:.
+  '@nuxt/kit': 3.5.3
 
 importers:
 
   .:
     dependencies:
       '@nuxt/kit':
-        specifier: ^3.5.3
+        specifier: 3.5.3
         version: 3.5.3(rollup@3.23.0)
       '@teamhanko/hanko-elements':
         specifier: 0.8.0
