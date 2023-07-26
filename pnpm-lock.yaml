@@ -16,8 +16,8 @@ importers:
         specifier: 3.5.3
         version: 3.5.3(rollup@3.23.0)
       '@teamhanko/hanko-elements':
-        specifier: 0.8.0
-        version: 0.8.0
+        specifier: 0.8.1
+        version: 0.8.1
       defu:
         specifier: ^6.1.2
         version: 6.1.2
@@ -1103,8 +1103,8 @@ packages:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
     dev: true
 
-  /@teamhanko/hanko-elements@0.8.0:
-    resolution: {integrity: sha512-oIRZw8wJbEaIH5QTEzqBZYwNiXZQjrzWlnWZQP5Ae+YS++JOvzUKgfJRV6paEyfwAo/7GnOV+MTtdCEWnCwhxQ==}
+  /@teamhanko/hanko-elements@0.8.1:
+    resolution: {integrity: sha512-VAjhIO7S/mP2l8wLZMBs1l4JJFiSvIvn9G9NV2mbZ81bdp6ta8eRY64wkxszwxPFEfaCMVBmhXSKHU68yNXOog==}
     dependencies:
       '@denysvuika/preact-translate': 0.4.1(preact@10.13.2)
       '@teamhanko/hanko-frontend-sdk': 0.8.0
