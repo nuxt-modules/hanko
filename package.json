@@ -60,7 +60,7 @@
     "h3": "1.7.1",
     "nuxt": "3.5.3",
     "playwright": "1.36.2",
-    "prettier": "3.0.0",
+    "prettier": "3.0.1",
     "vitest": "0.34.1"
   },
   "resolutions": {
