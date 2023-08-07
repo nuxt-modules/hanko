@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     // You can also configure this by setting NUXT_PUBLIC_HANKO_API_URL at runtime
     apiURL: '<YOUR_API_URL>',
     // You can also customise these if required
+    // cookieName: 'hanko'
     // redirects: {
     //   login: '/login',
     //   success: '/',

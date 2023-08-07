@@ -11,6 +11,10 @@ export function useHanko() {
     return null
   }
 
-  const hankoApi = useRuntimeConfig().public.hanko.apiURL
-  return new Hanko(hankoApi)
+  const hankoConfig = useRuntimeConfig().public.hanko
+  const hankoOptions = {
+    cookieName: hankoConfig.cookieName,
+    localStorageKey: hankoConfig.cookieName,
+  }
+  return new Hanko(hankoConfig.apiURL, hankoOptions)
 }
