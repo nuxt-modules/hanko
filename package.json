@@ -42,11 +42,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.5.3",
+    "@nuxt/kit": "^3.6.5",
     "@teamhanko/hanko-elements": "0.8.2",
     "defu": "^6.1.2",
     "jose": "^4.14.4",
-    "ufo": "^1.1.2"
+    "ufo": "^1.2.0"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "0.1.1",
