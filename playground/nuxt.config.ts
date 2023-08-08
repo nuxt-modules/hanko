@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   hanko: {
     // You need to provide the Hanko API URL in order for it to work
     apiURL: '',
+    cookieName: 'hanko',
     redirects: {
       login: '/login', // this is the default
       home: '/', // this is the default
