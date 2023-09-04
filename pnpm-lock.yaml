@@ -16,8 +16,8 @@ importers:
         specifier: 3.6.5
         version: 3.6.5(rollup@3.28.0)
       '@teamhanko/hanko-elements':
-        specifier: 0.8.2
-        version: 0.8.2
+        specifier: 0.8.3
+        version: 0.8.3
       defu:
         specifier: ^6.1.2
         version: 6.1.2
@@ -371,10 +371,10 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@denysvuika/preact-translate@0.4.1(preact@10.16.0):
-    resolution: {integrity: sha512-JCgTwPd6iq0nD6betffGYT4C2mj+PYLjEPuDcMRny4Nsh4E2W7UHWD8/jHnUyGiDnt0nezqAzP0s/AB+6XMVJg==}
+  /@denysvuika/preact-translate@0.5.0(preact@10.16.0):
+    resolution: {integrity: sha512-hcWbmA5+05JRYGPhl64kDiJ+rWLOKe4tDi0y7cXVKe+hwu6H0KphyAwLvVbCSTTtnfXvAijnEZMOf/kCsdPFrQ==}
     peerDependencies:
-      preact: '>=10.0.0'
+      preact: '>=10.13.0'
     dependencies:
       preact: 10.16.0
     dev: false
@@ -1426,18 +1426,18 @@ packages:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
 
-  /@teamhanko/hanko-elements@0.8.2:
-    resolution: {integrity: sha512-Y74MH5jOjGNpdRQe3WY8PchPkQ9zwAgNDYudTn0vGyvJFgdzEeOBYHGQ1e20wrxMIY/CpuykMpPjg1Oo7ignnQ==}
+  /@teamhanko/hanko-elements@0.8.3:
+    resolution: {integrity: sha512-vF0sSfSytwrtdw4aNdOkcCoKohYK7Rh3CD+nHuMysLCdWTYI3Xs2URnuhEsO0J868sjLps0K89sXa1uX18aVkg==}
     dependencies:
-      '@denysvuika/preact-translate': 0.4.1(preact@10.16.0)
-      '@teamhanko/hanko-frontend-sdk': 0.8.2
+      '@denysvuika/preact-translate': 0.5.0(preact@10.16.0)
+      '@teamhanko/hanko-frontend-sdk': 0.8.3
       '@teamhanko/preact-custom-element': 4.2.2(preact@10.16.0)
       classnames: 2.3.2
       preact: 10.16.0
     dev: false
 
-  /@teamhanko/hanko-frontend-sdk@0.8.2:
-    resolution: {integrity: sha512-8J6LD/tzxaqEPDu0KBxzg4DTJiv1MSyyIDuewoRnlAgmgpqxBeIStT/bFbHZNfcFmYxhDy7D18+ICLKNIUU81A==}
+  /@teamhanko/hanko-frontend-sdk@0.8.3:
+    resolution: {integrity: sha512-VjGYLDb4xSCFrcgUqm7VhVWCFH/pf16+/61e6MsGbr7hqJXfnQirQhYwXs2vQWG2A8F/2oianD2aaLZIC4W3CQ==}
     dependencies:
       '@types/js-cookie': 3.0.3
     dev: false
