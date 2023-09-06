@@ -9,6 +9,7 @@
 
 - [✨ &nbsp;Changelog](https://github.com/nuxt-modules/hanko/blob/main/CHANGELOG.md)
 <!-- - [▶️ &nbsp;Online playground](https://stackblitz.com/github/nuxt-modules/hanko/tree/main/playground) -->
+- [🎁 &nbsp;Hanko starter](https://github.com/teamhanko/hanko-nuxt-starter)
 
 ## Features
 
