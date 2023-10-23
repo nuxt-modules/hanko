@@ -16,8 +16,8 @@ importers:
         specifier: 3.6.5
         version: 3.6.5(rollup@3.29.4)
       '@teamhanko/hanko-elements':
-        specifier: 0.8.3
-        version: 0.8.3
+        specifier: 0.9.0
+        version: 0.9.0
       defu:
         specifier: ^6.1.2
         version: 6.1.2
@@ -1663,18 +1663,18 @@ packages:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
 
-  /@teamhanko/hanko-elements@0.8.3:
-    resolution: {integrity: sha512-vF0sSfSytwrtdw4aNdOkcCoKohYK7Rh3CD+nHuMysLCdWTYI3Xs2URnuhEsO0J868sjLps0K89sXa1uX18aVkg==}
+  /@teamhanko/hanko-elements@0.9.0:
+    resolution: {integrity: sha512-5h8j3RtQUyJgqMquLEXOoSj037G9vrN/bm/3dMpoHbGictmNCsa1zLsFiz5DnKr59TkKnwvNErUiuPxIYYcDbg==}
     dependencies:
       '@denysvuika/preact-translate': 0.5.0(preact@10.18.1)
-      '@teamhanko/hanko-frontend-sdk': 0.8.3
+      '@teamhanko/hanko-frontend-sdk': 0.9.0
       '@teamhanko/preact-custom-element': 4.2.2(preact@10.18.1)
       classnames: 2.3.2
       preact: 10.18.1
     dev: false
 
-  /@teamhanko/hanko-frontend-sdk@0.8.3:
-    resolution: {integrity: sha512-VjGYLDb4xSCFrcgUqm7VhVWCFH/pf16+/61e6MsGbr7hqJXfnQirQhYwXs2vQWG2A8F/2oianD2aaLZIC4W3CQ==}
+  /@teamhanko/hanko-frontend-sdk@0.9.0:
+    resolution: {integrity: sha512-zUi8chayzV2c6mJiN04VEO5FhWPEDMiU47xsFsAk/YlZ8g4csOBSKp+CeQ5tBaOkbkg81KTzUZpmR9jk7dCrew==}
     dependencies:
       '@types/js-cookie': 3.0.4
     dev: false
