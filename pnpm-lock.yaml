@@ -22,8 +22,8 @@ importers:
         specifier: ^6.1.2
         version: 6.1.2
       jose:
-        specifier: ^4.14.4
-        version: 4.14.4
+        specifier: ^5.0.0
+        version: 5.0.0
       ufo:
         specifier: ^1.2.0
         version: 1.2.0
@@ -3789,8 +3789,8 @@ packages:
     resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
     hasBin: true
 
-  /jose@4.14.4:
-    resolution: {integrity: sha512-j8GhLiKmUAh+dsFXlX1aJCbt5KMibuKb+d7j1JaOJG6s2UjX1PQlW+OKB/sD4a/5ZYF4RcmYmLSndOoU3Lt/3g==}
+  /jose@5.0.0:
+    resolution: {integrity: sha512-CzP0RPWMzo5oXfCSo+qA0Zz8enk1cI3Hpqzpz1o8Pck4xfFZqxC6OXRqEsAUzSTEl08fiuvU9xIbkoY1zeOg2w==}
     dev: false
 
   /js-tokens@4.0.0:
