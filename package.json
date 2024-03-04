@@ -59,7 +59,7 @@
     "eslint": "8.56.0",
     "h3": "1.8.2",
     "nuxt": "3.8.2",
-    "playwright": "1.37.1",
+    "playwright": "1.42.1",
     "prettier": "3.2.5",
     "vitest": "1.0.3"
   },
