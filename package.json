@@ -57,7 +57,7 @@
     "@vitest/coverage-v8": "1.0.3",
     "bumpp": "9.3.0",
     "eslint": "8.56.0",
-    "h3": "1.8.2",
+    "h3": "1.11.1",
     "nuxt": "3.8.2",
     "playwright": "1.42.1",
     "prettier": "3.2.5",
