@@ -11,7 +11,7 @@ import {
 export default defineNuxtRouteMiddleware(async to => {
   const redirects = useAppConfig().hanko.redirects
 
-  if (process.server) {
+  if (import.meta.server) {
     const event = useRequestEvent()
 
     if (!event.context.hanko?.sub && to.path !== redirects.login) {

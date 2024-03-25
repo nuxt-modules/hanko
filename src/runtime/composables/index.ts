@@ -7,7 +7,7 @@ import { Hanko } from '@teamhanko/hanko-elements'
  * It will be `null` on the server but defined on the client.
  */
 export function useHanko() {
-  if (process.server) {
+  if (import.meta.server) {
     return null
   }
 
