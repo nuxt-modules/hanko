@@ -54,14 +54,14 @@
     "@nuxt/schema": "3.8.2",
     "@nuxt/test-utils": "3.8.1",
     "@types/node": "20.11.30",
-    "@vitest/coverage-v8": "1.0.3",
+    "@vitest/coverage-v8": "1.4.0",
     "bumpp": "9.3.0",
     "eslint": "8.56.0",
     "h3": "1.11.1",
     "nuxt": "3.8.2",
     "playwright": "1.42.1",
     "prettier": "3.2.5",
-    "vitest": "1.0.3"
+    "vitest": "1.4.0"
   },
   "resolutions": {
     "@nuxtjs/hanko": "link:.",
