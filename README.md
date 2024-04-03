@@ -22,10 +22,7 @@
 Install and add `@nuxtjs/hanko` to your `nuxt.config`.
 
 ```bash
-# Whichever matches your package manager
-pnpm add -D @nuxtjs/hanko
-npm install -D @nuxtjs/hanko
-yarn add -D @nuxtjs/hanko
+npx nuxi@latest module add hanko
 ```
 
 ```js
