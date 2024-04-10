@@ -1,5 +1,5 @@
-import { useRuntimeConfig } from '#imports'
 import { Hanko } from '@teamhanko/hanko-elements'
+import { useRuntimeConfig } from '#imports'
 
 /**
  * This composable returns a Hanko instance.

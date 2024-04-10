@@ -1,7 +1,7 @@
-import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 import { register } from '@teamhanko/hanko-elements'
+import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 
-export default defineNuxtPlugin(nuxtApp => {
+export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig()
   const hankoOptions = {
     storageKey: config.public.hanko.cookieName,

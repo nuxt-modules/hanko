@@ -7,6 +7,7 @@ function logout() {
   hanko!.user.logout()
 }
 </script>
+
 <template>
   <div>
     <h1>Protected Page</h1>
