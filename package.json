@@ -32,11 +32,9 @@
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "pnpm lint && pnpm test && bumpp && pnpm publish",
-    "lint": "pnpm lint:all:eslint && pnpm lint:all:prettier",
+    "lint": "pnpm lint:all:eslint",
     "lint:all:eslint": "pnpm lint:eslint .",
-    "lint:all:prettier": "pnpm lint:prettier \"{src,test}/**/*.{js,json,ts}\"",
     "lint:eslint": "eslint --fix",
-    "lint:prettier": "prettier --write --loglevel warn",
     "test": "vitest run",
     "test:types": "tsc --noEmit",
     "test:watch": "vitest watch"
@@ -60,7 +58,6 @@
     "h3": "1.11.1",
     "nuxt": "3.8.2",
     "playwright": "1.42.1",
-    "prettier": "3.2.5",
     "vitest": "1.0.3"
   },
   "resolutions": {
