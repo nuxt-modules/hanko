@@ -11,4 +11,8 @@ export default createConfigForNuxt({
       './playground',
     ],
   },
+}).append({
+  rules: {
+    '@typescript-eslint/ban-types': 'off',
+  },
 })
