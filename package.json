@@ -11,7 +11,10 @@
     "module",
     "nuxt-module"
   ],
-  "repository": "nuxt-modules/hanko",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuxt-modules/hanko.git"
+  },
   "license": "MIT",
   "type": "module",
   "exports": {
