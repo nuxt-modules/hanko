@@ -1,8 +1,8 @@
 import type { H3Event } from 'h3'
 import { createError, getCookie, getHeader } from 'h3'
 import { createRemoteJWKSet, jwtVerify } from 'jose'
-import { useRuntimeConfig } from '#imports'
 import type { HankoPayload } from '../../auth'
+import { useRuntimeConfig } from '#imports'
 
 export async function verifyHankoEvent(event: H3Event) {
   const hankoConfig = useRuntimeConfig().public.hanko
