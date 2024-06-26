@@ -99,7 +99,7 @@ export default defineNuxtModule<ModuleOptions>({
       imports: ['useHanko'],
     })
 
-    addTemplate({
+    const hankoElementsTemplate = addTemplate({
       filename: 'hanko-elements.mjs',
       getContents: () => `export const Hanko = () => null`,
     })
@@ -107,7 +107,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.hook('vite:extendConfig', (config, { isServer }) => {
       if (isServer) {
         config.resolve!.alias = defu(config.resolve!.alias, {
-          '@teamhanko/hanko-elements': '#build/hanko-elements',
+          '@teamhanko/hanko-elements': hankoElementsTemplate.dst,
         })
       }
     })
