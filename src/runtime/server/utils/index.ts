@@ -1,6 +1,7 @@
 import type { H3Event } from 'h3'
 import { createError, getCookie, getHeader } from 'h3'
 import { createRemoteJWKSet, jwtVerify } from 'jose'
+import type { HankoPayload } from '../../auth'
 import { useRuntimeConfig } from '#imports'
 
 export async function verifyHankoEvent(event: H3Event) {
@@ -17,5 +18,5 @@ export async function verifyHankoEvent(event: H3Event) {
     })
   }
 
-  return await jwtVerify(jwt, JWKS).then(r => r.payload)
+  return await jwtVerify<HankoPayload>(jwt, JWKS).then(r => r.payload)
 }
