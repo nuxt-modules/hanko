@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.12.2",
-    "@teamhanko/hanko-elements": "0.11.0",
+    "@teamhanko/hanko-elements": "0.12.0",
     "defu": "^6.1.4",
     "jose": "^5.4.1",
     "ufo": "^1.5.3"
