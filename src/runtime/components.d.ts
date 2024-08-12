@@ -1,7 +1,5 @@
 import type { DefineComponent } from 'vue'
 
-interface HankoEvent {}
-
 declare module 'vue' {
   interface GlobalComponents {
     HankoAuth: DefineComponent<{
@@ -20,6 +18,6 @@ declare module 'vue' {
        */
       lang?: 'en' | 'de' | (string & {})
     }>
-    HankoEvents: DefineComponent<{}>
+    HankoEvents: DefineComponent<Record<string, unknown>>
   }
 }
