@@ -95,7 +95,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
 
-    for (const name of ['logged-in', 'logged-out']) {
+    for (const name of ['allow-all', 'logged-in', 'logged-out']) {
       addRouteMiddleware({
         name: `hanko-${name}`,
         path: resolver.resolve(`./runtime/middleware/${name}`),
@@ -106,6 +106,14 @@ export default defineNuxtModule<ModuleOptions>({
     addImportsSources({
       from: resolver.resolve('./runtime/composables/index'),
       imports: ['useHanko'],
+    })
+    addImportsSources({
+      from: resolver.resolve('./runtime/middleware/logged-in.ts'),
+      imports: ['hankoLoggedIn'],
+    })
+    addImportsSources({
+      from: resolver.resolve('./runtime/middleware/logged-out.ts'),
+      imports: ['hankoLoggedOut'],
     })
 
     const hankoElementsTemplate = addTemplate({
