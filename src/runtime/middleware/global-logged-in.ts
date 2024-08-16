@@ -14,7 +14,8 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     if (to.meta.middleware.some(isHankoMiddleware)) {
       return true
     }
-  } else if (isHankoMiddleware(to.meta.middleware)) {
+  }
+  else if (isHankoMiddleware(to.meta.middleware)) {
     return true
   }
 
@@ -34,7 +35,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
  */
 const isHankoMiddleware = (middleware: unknown) => {
   return (
-    typeof middleware === 'string' &&
-    ['hanko-allow-all', 'hanko-logged-in', 'hanko-logged-out'].includes(middleware)
+    typeof middleware === 'string'
+    && ['hanko-allow-all', 'hanko-logged-in', 'hanko-logged-out'].includes(middleware)
   )
 }
