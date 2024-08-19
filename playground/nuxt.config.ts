@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  compatibilityDate: '2024-08-19',
   modules: ['@nuxtjs/hanko'],
   hanko: {
     // You need to provide the Hanko API URL in order for it to work
