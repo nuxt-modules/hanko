@@ -60,7 +60,7 @@
     "eslint": "9.9.0",
     "h3": "1.12.0",
     "nuxt": "3.12.4",
-    "playwright": "1.46.0",
+    "playwright": "1.46.1",
     "vitest": "2.0.5"
   },
   "resolutions": {
