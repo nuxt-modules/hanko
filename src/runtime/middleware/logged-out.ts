@@ -25,7 +25,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return navigateTo(redirects.home)
   }
 
-  const removeHankoHook = hanko.onAuthFlowCompleted(() => {
+  const removeHankoHook = hanko.onSessionCreated(() => {
     if (!redirects.followRedirect || !to.query.redirect) {
       navigateTo(redirects.success)
       return

@@ -43,29 +43,30 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.12.4",
-    "@teamhanko/hanko-elements": "0.12.0",
+    "@nuxt/kit": "^3.13.0",
+    "@teamhanko/hanko-elements": "1.0.1",
     "defu": "^6.1.4",
-    "jose": "^5.6.3",
+    "jose": "^5.8.0",
     "ufo": "^1.5.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "0.5.2",
+    "@nuxt/eslint-config": "0.5.3",
     "@nuxt/module-builder": "0.8.3",
-    "@nuxt/schema": "3.12.4",
+    "@nuxt/schema": "3.13.0",
     "@nuxt/test-utils": "3.14.1",
-    "@types/node": "20.14.15",
+    "@types/node": "20.16.2",
     "@vitest/coverage-v8": "2.0.5",
-    "bumpp": "9.4.2",
+    "bumpp": "9.5.2",
     "eslint": "9.9.1",
     "h3": "1.12.0",
-    "nuxt": "3.12.4",
+    "nuxt": "3.13.0",
     "playwright": "1.46.1",
+    "typescript": "^5.5.4",
     "vitest": "2.0.5"
   },
   "resolutions": {
-    "@nuxt/kit": "3.12.4",
+    "@nuxt/kit": "3.13.0",
     "@nuxtjs/hanko": "link:."
   },
-  "packageManager": "pnpm@9.7.0"
+  "packageManager": "pnpm@9.9.0"
 }
