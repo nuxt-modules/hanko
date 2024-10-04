@@ -103,7 +103,7 @@ Published under the [MIT License](./LICENCE).
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/hanko?style=flat-square
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/hanko
 [npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/hanko?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/hanko
+[npm-downloads-href]: https://npm.chart.dev/@nuxtjs/hanko
 [github-actions-src]: https://img.shields.io/github/actions/workflow/status/nuxt-modules/hanko/ci.yml?branch=main
 [github-actions-href]: https://github.com/nuxt-modules/hanko/actions?query=workflow%3Aci
 [codecov-src]: https://img.shields.io/codecov/c/gh/nuxt-modules/hanko/main?style=flat-square
