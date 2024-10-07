@@ -16,6 +16,7 @@ export interface ModuleOptions {
   apiURL?: string
   registerComponents?: boolean
   augmentContext?: boolean
+  globalMiddleware?: boolean
   cookieName?: string
   redirects?: {
     login?: string
@@ -34,6 +35,7 @@ export default defineNuxtModule<ModuleOptions>({
     apiURL: '',
     registerComponents: true,
     augmentContext: true,
+    globalMiddleware: false,
     cookieName: 'hanko',
     redirects: {
       login: '/login',
@@ -86,7 +88,15 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
 
-    for (const name of ['logged-in', 'logged-out']) {
+    if (options.globalMiddleware) {
+      addRouteMiddleware({
+        name: 'hanko-global-logged-in',
+        path: resolver.resolve('./runtime/middleware/global-logged-in'),
+        global: true,
+      })
+    }
+
+    for (const name of ['allow-all', 'logged-in', 'logged-out']) {
       addRouteMiddleware({
         name: `hanko-${name}`,
         path: resolver.resolve(`./runtime/middleware/${name}`),
@@ -97,6 +107,14 @@ export default defineNuxtModule<ModuleOptions>({
     addImportsSources({
       from: resolver.resolve('./runtime/composables/index'),
       imports: ['useHanko'],
+    })
+    addImportsSources({
+      from: resolver.resolve('./runtime/middleware/logged-in.ts'),
+      imports: ['hankoLoggedIn'],
+    })
+    addImportsSources({
+      from: resolver.resolve('./runtime/middleware/logged-out.ts'),
+      imports: ['hankoLoggedOut'],
     })
 
     const hankoElementsTemplate = addTemplate({
