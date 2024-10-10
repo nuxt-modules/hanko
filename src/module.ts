@@ -7,8 +7,13 @@ import {
   addServerHandler,
   addTemplate,
 } from '@nuxt/kit'
+import type { Translation, CookieSameSite } from '@teamhanko/hanko-elements'
 import { defu } from 'defu'
 
+// Manually declaring this interface since it's not being exported from Hanko
+interface Translations {
+  [lang: string]: Partial<Translation>
+}
 export interface ModuleOptions {
   /**
    * This can be overridden at runtime by setting NUXT_PUBLIC_HANKO_API_URL
@@ -23,6 +28,16 @@ export interface ModuleOptions {
     success?: string
     followRedirect?: boolean
   }
+  cookieSameSite?: CookieSameSite
+  cookieDomain?: string
+  shadow?: boolean
+  injectStyles?: boolean
+  enablePasskeys?: boolean
+  hidePasskeyButtonOnLogin?: boolean
+  translations?: Translations
+  translationsLocation?: string
+  fallbackLanguage?: string
+  storageKey?: string
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -45,24 +60,23 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
+    const { registerComponents, augmentContext, redirects, ...hankoOptions } = options
+
     const isCustomElement = nuxt.options.vue.compilerOptions.isCustomElement
     nuxt.options.vue.compilerOptions.isCustomElement = (tag: string) =>
       tag.startsWith('hanko-') || isCustomElement?.(tag) || false
 
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
-      hanko: {
-        apiURL: options.apiURL,
-        cookieName: options.cookieName,
-      },
+      hanko: hankoOptions,
     })
 
     nuxt.options.appConfig = defu(nuxt.options.appConfig, {
       hanko: {
-        redirects: options.redirects,
+        redirects: redirects,
       },
     })
 
-    if (options.registerComponents) {
+    if (registerComponents) {
       if (nuxt.options.vue.runtimeCompiler) {
         addPlugin(resolver.resolve('./runtime/plugins/custom-elements'))
       }
@@ -74,7 +88,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
 
-    if (options.augmentContext) {
+    if (augmentContext) {
       addServerHandler({
         middleware: true,
         handler: resolver.resolve('./runtime/server/middleware/auth'),
@@ -113,7 +127,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Add Nitro composables
-    nuxt.hook('nitro:config', (config) => {
+    nuxt.hook('nitro:config', config => {
       config.externals = defu(config.externals, {
         inline: [resolver.resolve('./runtime/server')],
       })
