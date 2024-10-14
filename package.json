@@ -38,7 +38,7 @@
     "lint": "pnpm lint:all:eslint",
     "lint:all:eslint": "pnpm lint:eslint .",
     "lint:eslint": "eslint --fix",
-    "test": "vitest run",
+    "test": "vitest run --coverage",
     "test:types": "tsc --noEmit",
     "test:watch": "vitest watch"
   },
