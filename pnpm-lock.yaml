@@ -16,8 +16,8 @@ importers:
         specifier: 3.14.159
         version: 3.14.159(magicast@0.3.5)(rollup@4.24.3)
       '@teamhanko/hanko-elements':
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 1.2.0
+        version: 1.2.0
       defu:
         specifier: ^6.1.4
         version: 6.1.4
@@ -1183,11 +1183,11 @@ packages:
     peerDependencies:
       eslint: '>=8.40.0'
 
-  '@teamhanko/hanko-elements@1.1.0':
-    resolution: {integrity: sha512-EA95wfd/p72ahI3zOYRf9cnoax5ZG1XTi6BWfRYm/OEAIllVqUzOFfycO4CgjvyxyxYllf7/TcIsZI70Wni7rQ==}
+  '@teamhanko/hanko-elements@1.2.0':
+    resolution: {integrity: sha512-fyoMWey6dw6q+/B/0jem9xpw8EpVHOXeuMOaD6xaEnSQn3EP2U9M3WLFBB+PJZhWO8u2WzXopS3f3HD7RFv2Ig==}
 
-  '@teamhanko/hanko-frontend-sdk@1.1.0':
-    resolution: {integrity: sha512-21Uybbqm1zHPs6rW3Mb2d/ke43ddcqT5q2NurPymQ9z2BgqJRe2bP/s17U2ul+jeIMAiwrN6i7DokE66delv4w==}
+  '@teamhanko/hanko-frontend-sdk@1.2.0':
+    resolution: {integrity: sha512-Bzjrtg1q7YRpVdGcbu5wsi/l1qWMCffXBjhr+2qcIjqZ6F5wMchOqpShY19VCLycjO6SFqO+gAE0ICLa13pxDw==}
 
   '@teamhanko/preact-custom-element@4.2.2':
     resolution: {integrity: sha512-3djCQr25IxQIgpidxD8J0fTQ7/hMuoa5Nmv7delQc6sX4kXgv9e/pE01cywpmGZLi69H1KUH4dmZ4cPPJQrsQQ==}
@@ -5379,15 +5379,15 @@ snapshots:
       - supports-color
       - typescript
 
-  '@teamhanko/hanko-elements@1.1.0':
+  '@teamhanko/hanko-elements@1.2.0':
     dependencies:
       '@denysvuika/preact-translate': 0.5.0(preact@10.24.3)
-      '@teamhanko/hanko-frontend-sdk': 1.1.0
+      '@teamhanko/hanko-frontend-sdk': 1.2.0
       '@teamhanko/preact-custom-element': 4.2.2(preact@10.24.3)
       classnames: 2.5.1
       preact: 10.24.3
 
-  '@teamhanko/hanko-frontend-sdk@1.1.0':
+  '@teamhanko/hanko-frontend-sdk@1.2.0':
     dependencies:
       '@types/js-cookie': 3.0.6
 
