@@ -52,19 +52,19 @@
   "devDependencies": {
     "@nuxt/eslint-config": "0.6.1",
     "@nuxt/module-builder": "0.8.4",
-    "@nuxt/schema": "3.14.0",
+    "@nuxt/schema": "3.14.159",
     "@nuxt/test-utils": "3.14.4",
     "@types/node": "22.9.0",
     "@vitest/coverage-v8": "2.1.4",
     "bumpp": "9.8.1",
     "eslint": "9.14.0",
     "h3": "1.13.0",
-    "nuxt": "3.14.0",
+    "nuxt": "3.14.159",
     "playwright": "1.48.2",
     "vitest": "2.1.4"
   },
   "resolutions": {
-    "@nuxt/kit": "3.14.0",
+    "@nuxt/kit": "3.14.159",
     "@nuxtjs/hanko": "link:."
   },
   "packageManager": "pnpm@9.12.3"
