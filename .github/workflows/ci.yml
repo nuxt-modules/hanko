@@ -7,8 +7,6 @@ on:
   push:
     branches:
       - main
-      - renovate/*
-      - renovate/*
 
 jobs:
   lint:
@@ -82,4 +80,5 @@ jobs:
         run: pnpm prepack
 
       - name: 🟩 Coverage
+        if: matrix.os == 'ubuntu-latest'
         uses: codecov/codecov-action@v4
