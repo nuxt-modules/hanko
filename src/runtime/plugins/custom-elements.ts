@@ -1,4 +1,5 @@
 import { defineNuxtPlugin } from '#imports'
+import type {} from 'nuxt/app'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const isCustomElement = nuxtApp.vueApp.config.compilerOptions.isCustomElement
