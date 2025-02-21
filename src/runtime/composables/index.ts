@@ -12,9 +12,10 @@ export function useHanko() {
   }
 
   const hankoConfig = useRuntimeConfig().public.hanko
-  const hankoOptions = {
+  return new Hanko(hankoConfig.apiURL, {
     cookieName: hankoConfig.cookieName,
-    localStorageKey: hankoConfig.cookieName,
-  }
-  return new Hanko(hankoConfig.apiURL, hankoOptions)
+    localStorageKey: hankoConfig.storageKey,
+    cookieSameSite: hankoConfig.cookieSameSite,
+    cookieDomain: hankoConfig.cookieDomain,
+  })
 }

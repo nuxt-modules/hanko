@@ -1,12 +1,6 @@
-import {
-  defineNuxtModule,
-  addPlugin,
-  createResolver,
-  addImportsSources,
-  addRouteMiddleware,
-  addServerHandler,
-  addTemplate,
-} from '@nuxt/kit'
+import type { PublicRuntimeConfig } from 'nuxt/schema'
+import { defineNuxtModule, addPlugin, createResolver, addImportsSources, addRouteMiddleware, addServerHandler, addTemplate } from '@nuxt/kit'
+import type { CookieSameSite, RegisterOptions } from '@teamhanko/hanko-elements'
 import { defu } from 'defu'
 
 export interface ModuleOptions {
@@ -17,11 +11,23 @@ export interface ModuleOptions {
   registerComponents?: boolean
   augmentContext?: boolean
   cookieName?: string
+  cookieSameSite?: CookieSameSite
+  cookieDomain?: string
+  storageKey?: string
   redirects?: {
     login?: string
     home?: string
     success?: string
     followRedirect?: boolean
+  }
+  components?: {
+    shadow?: RegisterOptions['shadow']
+    injectStyles?: RegisterOptions['injectStyles']
+    enablePasskeys?: RegisterOptions['enablePasskeys']
+    hidePasskeyButtonOnLogin?: RegisterOptions['hidePasskeyButtonOnLogin']
+    translations?: RegisterOptions['translations']
+    translationsLocation?: RegisterOptions['translationsLocation']
+    fallbackLanguage?: RegisterOptions['fallbackLanguage']
   }
 }
 
@@ -51,10 +57,13 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
       hanko: {
-        apiURL: options.apiURL,
-        cookieName: options.cookieName,
-      },
-    })
+        apiURL: options.apiURL!,
+        cookieName: options.cookieName!,
+        cookieSameSite: options.cookieSameSite || undefined,
+        cookieDomain: options.cookieDomain || undefined,
+        components: options.components || {},
+      } satisfies PublicRuntimeConfig['hanko'],
+    }) as PublicRuntimeConfig
 
     nuxt.options.appConfig = defu(nuxt.options.appConfig, {
       hanko: {
@@ -128,3 +137,16 @@ export default defineNuxtModule<ModuleOptions>({
     })
   },
 })
+
+declare module '@nuxt/schema' {
+  interface PublicRuntimeConfig {
+    hanko: {
+      apiURL: NonNullable<ModuleOptions['apiURL']>
+      cookieName: NonNullable<ModuleOptions['cookieName']>
+      cookieSameSite?: ModuleOptions['cookieSameSite']
+      cookieDomain?: ModuleOptions['cookieDomain']
+      storageKey?: ModuleOptions['storageKey']
+      components: ModuleOptions['components']
+    }
+  }
+}
