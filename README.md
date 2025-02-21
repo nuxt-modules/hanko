@@ -45,11 +45,11 @@ export default defineNuxtConfig({
     // registerComponents: true,
     // augmentContext: true,
     // components: {
-    //   shadow: true
-    //   injectStyles: true
-    //   enablePasskeys: true
-    //   hidePasskeyButtonOnLogin: true
-    //   translations: {}
+    //   shadow: true,
+    //   injectStyles: true,
+    //   enablePasskeys: true,
+    //   hidePasskeyButtonOnLogin: true,
+    //   translations: {},
     //   fallbackLanguage: 'en'
     // }
   },
