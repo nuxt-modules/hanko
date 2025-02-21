@@ -1,12 +1,5 @@
-import {
-  defineNuxtModule,
-  addPlugin,
-  createResolver,
-  addImportsSources,
-  addRouteMiddleware,
-  addServerHandler,
-  addTemplate,
-} from '@nuxt/kit'
+import type { PublicRuntimeConfig } from 'nuxt/schema'
+import { defineNuxtModule, addPlugin, createResolver, addImportsSources, addRouteMiddleware, addServerHandler, addTemplate } from '@nuxt/kit'
 import type { Translation, CookieSameSite } from '@teamhanko/hanko-elements'
 import { defu } from 'defu'
 
@@ -22,22 +15,24 @@ export interface ModuleOptions {
   registerComponents?: boolean
   augmentContext?: boolean
   cookieName?: string
+  cookieSameSite?: CookieSameSite
+  cookieDomain?: string
+  storageKey?: string
   redirects?: {
     login?: string
     home?: string
     success?: string
     followRedirect?: boolean
   }
-  cookieSameSite?: CookieSameSite
-  cookieDomain?: string
-  shadow?: boolean
-  injectStyles?: boolean
-  enablePasskeys?: boolean
-  hidePasskeyButtonOnLogin?: boolean
-  translations?: Translations
-  translationsLocation?: string
-  fallbackLanguage?: string
-  storageKey?: string
+  components?: {
+    shadow?: boolean
+    injectStyles?: boolean
+    enablePasskeys?: boolean
+    hidePasskeyButtonOnLogin?: boolean
+    translations?: Translations
+    translationsLocation?: string
+    fallbackLanguage?: string
+  }
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -60,23 +55,27 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    const { registerComponents, augmentContext, redirects, ...hankoOptions } = options
-
     const isCustomElement = nuxt.options.vue.compilerOptions.isCustomElement
     nuxt.options.vue.compilerOptions.isCustomElement = (tag: string) =>
       tag.startsWith('hanko-') || isCustomElement?.(tag) || false
 
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
-      hanko: hankoOptions,
-    })
+      hanko: {
+        apiURL: options.apiURL!,
+        cookieName: options.cookieName!,
+        cookieSameSite: options.cookieSameSite || undefined,
+        cookieDomain: options.cookieDomain || undefined,
+        components: options.components || {},
+      } satisfies PublicRuntimeConfig['hanko'],
+    }) as PublicRuntimeConfig
 
     nuxt.options.appConfig = defu(nuxt.options.appConfig, {
       hanko: {
-        redirects: redirects,
+        redirects: options.redirects,
       },
     })
 
-    if (registerComponents) {
+    if (options.registerComponents) {
       if (nuxt.options.vue.runtimeCompiler) {
         addPlugin(resolver.resolve('./runtime/plugins/custom-elements'))
       }
@@ -88,7 +87,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
 
-    if (augmentContext) {
+    if (options.augmentContext) {
       addServerHandler({
         middleware: true,
         handler: resolver.resolve('./runtime/server/middleware/auth'),
@@ -142,3 +141,16 @@ export default defineNuxtModule<ModuleOptions>({
     })
   },
 })
+
+declare module '@nuxt/schema' {
+  interface PublicRuntimeConfig {
+    hanko: {
+      apiURL: NonNullable<ModuleOptions['apiURL']>
+      cookieName: NonNullable<ModuleOptions['cookieName']>
+      cookieSameSite?: ModuleOptions['cookieSameSite']
+      cookieDomain?: ModuleOptions['cookieDomain']
+      storageKey?: ModuleOptions['storageKey']
+      components: ModuleOptions['components']
+    }
+  }
+}

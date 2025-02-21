@@ -12,18 +12,10 @@ export function useHanko() {
   }
 
   const hankoConfig = useRuntimeConfig().public.hanko
-  const hankoOptions = {
+  return new Hanko(hankoConfig.apiURL, {
     cookieName: hankoConfig.cookieName,
-    localStorageKey: hankoConfig.cookieName,
+    localStorageKey: hankoConfig.storageKey,
     cookieSameSite: hankoConfig.cookieSameSite,
     cookieDomain: hankoConfig.cookieDomain,
-    shadow: hankoConfig.shadow,
-    injectStyles: hankoConfig.injectStyles,
-    enablePasskeys: hankoConfig.enablePasskeys,
-    hidePasskeyButtonOnLogin: hankoConfig.hidePasskeyButtonOnLogin,
-    translations: hankoConfig.translations,
-    translationsLocation: hankoConfig.translationsLocation,
-    fallbackLanguage: hankoConfig.fallbackLanguage,
-  }
-  return new Hanko(hankoConfig.apiURL, hankoOptions)
+  })
 }
