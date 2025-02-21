@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/hanko",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "description": "Hanko integration for Nuxt",
   "keywords": [
     "authentication",
