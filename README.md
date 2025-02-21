@@ -32,7 +32,10 @@ export default defineNuxtConfig({
     // You can also configure this by setting NUXT_PUBLIC_HANKO_API_URL at runtime
     apiURL: '<YOUR_API_URL>',
     // You can also customise these if required
-    // cookieName: 'hanko'
+    // cookieName: 'hanko',
+    // cookieSameSite: 'Lax',
+    // cookieDomain: 'nuxt.com',
+    // storageKey: 'hanko',
     // redirects: {
     //   login: '/login',
     //   success: '/',
@@ -41,6 +44,14 @@ export default defineNuxtConfig({
     // },
     // registerComponents: true,
     // augmentContext: true,
+    // components: {
+    //   shadow: true
+    //   injectStyles: true
+    //   enablePasskeys: true
+    //   hidePasskeyButtonOnLogin: true
+    //   translations: {}
+    //   fallbackLanguage: 'en'
+    // }
   },
 })
 ```
