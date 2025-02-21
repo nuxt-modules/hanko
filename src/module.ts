@@ -1,12 +1,8 @@
 import type { PublicRuntimeConfig } from 'nuxt/schema'
 import { defineNuxtModule, addPlugin, createResolver, addImportsSources, addRouteMiddleware, addServerHandler, addTemplate } from '@nuxt/kit'
-import type { Translation, CookieSameSite } from '@teamhanko/hanko-elements'
+import type { CookieSameSite, RegisterOptions } from '@teamhanko/hanko-elements'
 import { defu } from 'defu'
 
-// Manually declaring this interface since it's not being exported from Hanko
-interface Translations {
-  [lang: string]: Partial<Translation>
-}
 export interface ModuleOptions {
   /**
    * This can be overridden at runtime by setting NUXT_PUBLIC_HANKO_API_URL
@@ -25,13 +21,13 @@ export interface ModuleOptions {
     followRedirect?: boolean
   }
   components?: {
-    shadow?: boolean
-    injectStyles?: boolean
-    enablePasskeys?: boolean
-    hidePasskeyButtonOnLogin?: boolean
-    translations?: Translations
-    translationsLocation?: string
-    fallbackLanguage?: string
+    shadow?: RegisterOptions['shadow']
+    injectStyles?: RegisterOptions['injectStyles']
+    enablePasskeys?: RegisterOptions['enablePasskeys']
+    hidePasskeyButtonOnLogin?: RegisterOptions['hidePasskeyButtonOnLogin']
+    translations?: RegisterOptions['translations']
+    translationsLocation?: RegisterOptions['translationsLocation']
+    fallbackLanguage?: RegisterOptions['fallbackLanguage']
   }
 }
 
