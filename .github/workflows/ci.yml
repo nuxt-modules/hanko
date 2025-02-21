@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: corepack enable
+      - run: npm i -g --force corepack && corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -30,11 +30,14 @@ jobs:
         run: pnpm run lint
 
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
-      - run: corepack enable
+      - run: npm i -g --force corepack && corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -68,7 +71,7 @@ jobs:
         run: pnpm dev:prepare
 
       - name: 🧪 Test project
-        run: pnpm test -- --coverage
+        run: pnpm test
 
       - name: 💪 Test types
         run: pnpm test:types
@@ -77,4 +80,5 @@ jobs:
         run: pnpm prepack
 
       - name: 🟩 Coverage
-        uses: codecov/codecov-action@v4
+        if: matrix.os == 'ubuntu-latest'
+        uses: codecov/codecov-action@v5

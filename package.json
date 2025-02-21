@@ -19,13 +19,18 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      "dist/types.d.mts": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
@@ -38,34 +43,34 @@
     "lint": "pnpm lint:all:eslint",
     "lint:all:eslint": "pnpm lint:eslint .",
     "lint:eslint": "eslint --fix",
-    "test": "vitest run",
+    "test": "vitest run --coverage",
     "test:types": "tsc --noEmit",
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.13.0",
-    "@teamhanko/hanko-elements": "1.0.2",
+    "@nuxt/kit": "^3.15.4",
+    "@teamhanko/hanko-elements": "1.4.0",
     "defu": "^6.1.4",
-    "jose": "^5.8.0",
+    "jose": "^5.10.0",
     "ufo": "^1.5.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "0.5.7",
-    "@nuxt/module-builder": "0.8.3",
-    "@nuxt/schema": "3.13.0",
-    "@nuxt/test-utils": "3.14.1",
-    "@types/node": "20.16.10",
-    "@vitest/coverage-v8": "2.1.2",
-    "bumpp": "9.6.1",
-    "eslint": "9.11.1",
-    "h3": "1.13.0",
-    "nuxt": "3.13.0",
-    "playwright": "1.47.2",
-    "vitest": "2.1.2"
+    "@nuxt/eslint-config": "1.1.0",
+    "@nuxt/module-builder": "1.0.0-alpha.1",
+    "@nuxt/schema": "3.15.4",
+    "@nuxt/test-utils": "3.17.0",
+    "@types/node": "22.13.4",
+    "@vitest/coverage-v8": "3.0.6",
+    "bumpp": "10.0.3",
+    "eslint": "9.20.1",
+    "h3": "1.15.0",
+    "nuxt": "3.15.4",
+    "playwright": "1.50.1",
+    "vitest": "3.0.6"
   },
   "resolutions": {
-    "@nuxt/kit": "3.13.0",
+    "@nuxt/kit": "3.15.4",
     "@nuxtjs/hanko": "link:."
   },
-  "packageManager": "pnpm@9.12.0"
+  "packageManager": "pnpm@10.4.1"
 }
