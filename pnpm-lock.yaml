@@ -22,8 +22,8 @@ importers:
         specifier: ^6.1.4
         version: 6.1.4
       jose:
-        specifier: ^5.10.0
-        version: 5.10.0
+        specifier: ^6.0.0
+        version: 6.0.6
       ufo:
         specifier: ^1.5.4
         version: 1.5.4
@@ -2288,8 +2288,8 @@ packages:
     resolution: {integrity: sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==}
     hasBin: true
 
-  jose@5.10.0:
-    resolution: {integrity: sha512-s+3Al/p9g32Iq+oqXxkW//7jk2Vig6FF1CFqzVXoTUXt2qz89YWbL+OwS17NFYEvxC35n0FKeGO2LGYSxeM2Gg==}
+  jose@6.0.6:
+    resolution: {integrity: sha512-FFF9x3KcdRJgQo74X8e6I4D1h3Wtd27fEo0suijveKFc+HFz6M5gonqxFPnDos9ulJFRqMNqWI6NexiHQPSnfQ==}
 
   js-levenshtein@1.1.6:
     resolution: {integrity: sha512-X2BB11YZtrRqY4EnQcLX5Rh373zbK4alC1FW7D7MBhL2gtcC17cTnr6DmfHZeS0s2rTHjUTMMHfG7gO8SSdw+g==}
@@ -6473,7 +6473,7 @@ snapshots:
 
   jiti@2.4.2: {}
 
-  jose@5.10.0: {}
+  jose@6.0.6: {}
 
   js-levenshtein@1.1.6: {}
 
