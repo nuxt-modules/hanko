@@ -1,3 +1,9 @@
+<script setup lang="ts">
+definePageMeta({
+  middleware: ['hanko-allow-all'],
+})
+</script>
+
 <template>
   <main>
     <h1>About</h1>
