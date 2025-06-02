@@ -72,5 +72,5 @@
     "@nuxt/kit": "3.17.4",
     "@nuxtjs/hanko": "link:."
   },
-  "packageManager": "pnpm@10.11.0"
+  "packageManager": "pnpm@10.11.1"
 }
