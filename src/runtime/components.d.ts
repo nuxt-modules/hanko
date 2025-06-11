@@ -21,3 +21,12 @@ declare module 'vue' {
     HankoEvents: DefineComponent<Record<string, unknown>>
   }
 }
+
+declare module 'nuxt/app' {
+  interface PageMeta {
+    hanko?: {
+      allow?: 'all' | 'logged-in' | 'logged-out'
+      deny?: 'logged-in' | 'logged-out'
+    }
+  }
+}
