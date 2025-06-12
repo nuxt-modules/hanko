@@ -1,4 +1,4 @@
-import { defineNuxtRouteMiddleware, hankoLoggedIn } from '#imports'
+import { defineNuxtRouteMiddleware, hankoLoggedIn, hankoLoggedOut } from '#imports'
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
   // If the requested location doesn't exist: let the router handle it
@@ -12,8 +12,19 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   // navigation and the default hankoLoggedIn is skipped
   if ([to.meta.middleware].flat().some(isHankoMiddleware)) return true
 
+  // Next it respects custom hanko PageMeta
+  if (to.meta.hanko) {
+    const { allow, deny } = to.meta.hanko
+
+    if (allow == 'all') return true
+    else if (allow == 'logged-in') return await hankoLoggedIn(to)
+    else if (allow == 'logged-out') return await hankoLoggedOut(to)
+    else if (deny == 'logged-in') return await hankoLoggedOut(to)
+    else if (deny == 'logged-out') return await hankoLoggedIn(to)
+  }
+
   // If no hanko middleware is set, default to hankoLoggedIn
-  return await hankoLoggedIn(to, from)
+  return await hankoLoggedIn(to)
 })
 
 /**
