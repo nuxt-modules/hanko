@@ -13,43 +13,11 @@ describe('Without globalMiddleware', () => {
       test.todo('middleware:loggedOut')
     })
   })
-
-  test.todo('pageMeta has no effect')
 })
 
 describe('With globalMiddleware', () => {
   describe('loggedOut', () => {
-    describe('ssr', () => {
-      describe('middleware', () => {
-        test.todo('none')
-        test.todo('loggedIn')
-        test.todo('loggedOut')
-      })
 
-      describe('pageMeta', () => {
-        test.todo('allow:all')
-        test.todo('allow:logged-in')
-        test.todo('allow:logged-out')
-        test.todo('deny:logged-in')
-        test.todo('deny:logged-out')
-      })
-    })
-
-    describe('client', () => {
-      describe('middleware', () => {
-        test.todo('none')
-        test.todo('loggedIn')
-        test.todo('loggedOut')
-      })
-
-      describe('pageMeta', () => {
-        test.todo('allow:all')
-        test.todo('allow:logged-in')
-        test.todo('allow:logged-out')
-        test.todo('deny:logged-in')
-        test.todo('deny:logged-out')
-      })
-    })
   })
 
   describe('loggedIn', () => {
@@ -85,6 +53,4 @@ describe('With globalMiddleware', () => {
       })
     })
   })
-
-  test.todo('middleware trumps pageMeta')
 })
