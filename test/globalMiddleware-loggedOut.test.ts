@@ -53,19 +53,14 @@ describe('Global middleware, not logged in', async () => {
   })
 
   describe('client', () => {
-    describe('middleware', () => {
-      it.todo('none')
-      it.todo('loggedIn')
-      it.todo('loggedOut')
-    })
-
-    describe('pageMeta', () => {
-      it.todo('allow:all')
-      it.todo('allow:logged-in')
-      it.todo('allow:logged-out')
-      it.todo('deny:logged-in')
-      it.todo('deny:logged-out')
-    })
+    it.todo('none')
+    it.todo('loggedIn')
+    it.todo('loggedOut')
+    it.todo('allow:all')
+    it.todo('allow:logged-in')
+    it.todo('allow:logged-out')
+    it.todo('deny:logged-in')
+    it.todo('deny:logged-out')
   })
 
   it('applies middleware over pageMeta', async () => {
