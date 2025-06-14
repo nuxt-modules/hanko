@@ -106,7 +106,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
 
-    for (const name of ['allow-all', 'logged-in', 'logged-out']) {
+    for (const name of ['logged-in', 'logged-out']) {
       addRouteMiddleware({
         name: `hanko-${name}`,
         path: resolver.resolve(`./runtime/middleware/${name}`),
