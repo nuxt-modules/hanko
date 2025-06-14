@@ -75,18 +75,19 @@ Check out the [Hanko documentation](https://docs.hanko.io/guides/vue) to learn m
 
 ### Middleware
 
-By default three new route middlewares are available in your Nuxt app: `hanko-logged-in`, `hanko-logged-out` and `hanko-allow-all`.
+By default two new route middlewares are available in your Nuxt app: `hanko-logged-in` and `hanko-logged-out`.
 
 - `hanko-logged-in` will prevent access to a page unless you are logged in. (It will redirect you to `redirects.login` instead, and then redirect back to this page once you login. You can disable this behaviour by setting `redirects.followRedirect` to `false`.)
 - `hanko-logged-out` will prevent access to a page unless you are logged out. (It will redirect you to `redirects.success` when you log in, and otherwise to `redirects.home`.)
-- `hanko-allow-all` will allow all users access to page, even if the `globalMiddleware` option is set to `true`. (If the `globalMiddleware` option is not set to `true`, this middleware has no effect.)
 
 You can also create your own middleware for full control.
 
 ### Global Middleware
 
 If the `globalMiddleware` configuration is set to `true`, the middleware is automatically applied to all of your pages.
-You can still override this behavior on each page, by applying the `hanko-logged-out` or the `hanko-allow-all` middleware.
+You can still override this behavior on each page, by applying a custom pageMeta.
+
+<!-- TODO document pageMeta -->
 
 **Note**: The `globalMiddleware` option will not apply any authentication checks to your API-paths.
 
