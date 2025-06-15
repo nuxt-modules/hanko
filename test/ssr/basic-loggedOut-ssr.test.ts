@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest'
 import { setup, fetch, $fetch } from '@nuxt/test-utils'
 
 await setup({
-  rootDir: fileURLToPath(new URL('../playground', import.meta.url)),
+  rootDir: fileURLToPath(new URL('../../playground', import.meta.url)),
 })
 
 describe('No global middleware, not logged in, ssr', async () => {

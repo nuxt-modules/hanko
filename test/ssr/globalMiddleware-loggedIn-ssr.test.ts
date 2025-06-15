@@ -2,10 +2,10 @@ import { $fetch, fetch, setup } from '@nuxt/test-utils'
 import defu from 'defu'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
-import { enableGlobalMiddleware, mockLoggedIn } from '../../config'
+import { enableGlobalMiddleware, mockLoggedIn } from '../config'
 
 await setup({
-  rootDir: fileURLToPath(new URL('../playground', import.meta.url)),
+  rootDir: fileURLToPath(new URL('../../playground', import.meta.url)),
   nuxtConfig: defu(mockLoggedIn, enableGlobalMiddleware),
 })
 
