@@ -31,6 +31,9 @@
     <NuxtLink id="deny-logged-out" to="/global/deny/logged-out">
       Deny logged-out
     </NuxtLink>
+    <NuxtLink id="incorrect-usage" to="/global/incorrect-usage">
+      Incorrect usage
+    </NuxtLink>
   </nav>
   <NuxtPage />
 </template>
