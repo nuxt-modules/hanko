@@ -1,4 +1,4 @@
-import { $fetch, fetch, setup } from '@nuxt/test-utils'
+import { fetch, setup } from '@nuxt/test-utils'
 import defu from 'defu'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
