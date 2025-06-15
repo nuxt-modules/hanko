@@ -51,8 +51,8 @@ export default defineNuxtConfig({
     //   hidePasskeyButtonOnLogin: true,
     //   translations: {},
     //   fallbackLanguage: 'en'
-    //   globalMiddleware: false,
     // }
+    // globalMiddleware: false,
   },
 })
 ```
@@ -84,10 +84,21 @@ You can also create your own middleware for full control.
 
 ### Global Middleware
 
-If the `globalMiddleware` configuration is set to `true`, the middleware is automatically applied to all of your pages.
-You can still override this behavior on each page, by applying a custom pageMeta.
+If the `globalMiddleware` configuration is set to `true`, all of your pages are protected by default.
+You can still override this behavior on each page, by applying a custom hanko pageMeta.
+You can set a value for **either** allow or deny as shown below.
 
-<!-- TODO document pageMeta -->
+```TypeScript
+definePageMeta({
+  hanko: {
+    // allow: 'all' | 'logged-in' | 'logged-out'
+    // deny: 'logged-in' | 'logged-out'
+  }
+})
+```
+
+This pageMeta will only be taken into consideration when the `globalMiddleware` option is enabled.
+You should not use hanko-middleware when `globalMiddleware` is enabled and instead use pageMeta.
 
 **Note**: The `globalMiddleware` option will not apply any authentication checks to your API-paths.
 

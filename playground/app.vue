@@ -15,7 +15,9 @@
     <NuxtLink to="/about">
       About page
     </NuxtLink>
-    <!-- TODO make these available for test only -->
+  </nav>
+  <NuxtPage />
+  <nav>
     <NuxtLink id="allow-all" to="/global/allow/all">
       Allow all
     </NuxtLink>
@@ -23,7 +25,7 @@
       Allow logged-in
     </NuxtLink>
     <NuxtLink id="allow-logged-out" to="/global/allow/logged-out">
-      Allow logged-ou
+      Allow logged-out
     </NuxtLink>
     <NuxtLink id="deny-logged-in" to="/global/deny/logged-in">
       Deny logged-in
@@ -35,5 +37,4 @@
       Incorrect usage
     </NuxtLink>
   </nav>
-  <NuxtPage />
 </template>
