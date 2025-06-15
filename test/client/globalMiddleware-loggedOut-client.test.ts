@@ -10,12 +10,21 @@ await setup({
 })
 
 describe('Global middleware, not logged in, client-side', async () => {
-  it.todo('none')
-  it.todo('loggedIn')
-  it.todo('loggedOut')
-  it.todo('allow:all')
-  it.todo('allow:logged-in')
-  it.todo('allow:logged-out')
-  it.todo('deny:logged-in')
-  it.todo('deny:logged-out')
+  it('redirects to login for page without explicit middleware')
+
+  it('hanko-logged-in middleware redirects to the login page')
+
+  it('hanko-logged-out middleware renders page')
+
+  it('allow:all renders page')
+
+  it('allow:logged-in redirects to login')
+
+  it('allow:logged-out renders page')
+
+  it('deny:logged-in renders page')
+
+  it('deny:logged-out redirects to login')
+
+  it('applies middleware over pageMeta', async () => {})
 })

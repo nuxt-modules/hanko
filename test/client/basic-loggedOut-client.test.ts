@@ -7,7 +7,11 @@ await setup({
 })
 
 describe('No global middleware, not logged in, client-side', async () => {
-  it.todo('middleware:none')
-  it.todo('middleware:loggedIn')
-  it.todo('middleware:loggedOut')
+  it('pageMeta:hanko has no effect without global middleware', async () => {})
+
+  it('renders page with no middleware', async () => {})
+
+  it('redirects to login page for hanko-logged-in middleware', async () => {})
+
+  it('renders page with hanko-logged-out middleware', async () => {})
 })
