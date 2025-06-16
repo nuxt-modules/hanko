@@ -1,10 +1,11 @@
-import { resolve } from 'node:path'
-import { addImports } from '@nuxt/kit'
+import { addImports, createResolver } from '@nuxt/kit'
 import type { NuxtConfig } from 'nuxt/schema'
 
 export const enableGlobalMiddleware = {
   hanko: { globalMiddleware: true },
 } satisfies NuxtConfig
+
+const resolver = createResolver(import.meta.url)
 
 export const mockLoggedIn = {
   hooks: {
@@ -12,12 +13,12 @@ export const mockLoggedIn = {
       addImports({
         name: 'useHanko',
         as: 'useHanko',
-        from: resolve(__dirname, 'mocks/useHanko.ts'),
+        from: resolver.resolve('./mocks/useHanko.ts'),
       })
       addImports({
         name: 'useRequestEvent',
         as: 'useRequestEvent',
-        from: resolve(__dirname, 'mocks/useRequestEvent.ts'),
+        from: resolver.resolve('./mocks/useRequestEvent.ts'),
       })
     },
   },
