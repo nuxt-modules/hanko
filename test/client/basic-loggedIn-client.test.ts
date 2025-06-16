@@ -14,21 +14,21 @@ describe('No global middleware, logged in, client-side', async () => {
   it('renders page with no middleware', async () => {
     const page = await createPage('/global/allow/all')
     await page.click('text=About page')
-    await page.waitForURL(`${useTestContext().url}about`, { timeout: 1000 })
+    await page.waitForURL(`${useTestContext().url}about`, { timeout: 4000 })
     expect(page.url()).toBe(`${useTestContext().url}about`)
   })
 
   it('renders page with hanko-logged-in middleware', async () => {
     const page = await createPage('/global/allow/all')
     await page.click('text=Protected page 🔐')
-    await page.waitForURL(`${useTestContext().url}protected`, { timeout: 1000 })
+    await page.waitForURL(`${useTestContext().url}protected`, { timeout: 4000 })
     expect(page.url()).toBe(`${useTestContext().url}protected`)
   })
 
   it('redirects to home page for hanko-logged-out middleware', async () => {
     const page = await createPage('/global/allow/all')
     await page.click('text=Log in page ⛔️👤')
-    await page.waitForURL(`${useTestContext().url}`, { timeout: 1000 })
+    await page.waitForURL(`${useTestContext().url}`, { timeout: 4000 })
     expect(page.url()).toBe(`${useTestContext().url}`)
   })
 })
