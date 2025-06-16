@@ -1,7 +1,6 @@
-import { setup } from '@nuxt/test-utils'
-import { createPage, useTestContext } from '@nuxt/test-utils/e2e'
-import defu from 'defu'
 import { fileURLToPath } from 'node:url'
+import { setup, createPage, useTestContext } from '@nuxt/test-utils'
+import defu from 'defu'
 import { describe, expect, it } from 'vitest'
 import { mockLoggedIn } from '../config'
 

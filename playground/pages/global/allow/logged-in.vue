@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ hanko: { allow: 'logged-in', } })
+definePageMeta({ hanko: { allow: 'logged-in' } })
 </script>
 
 <template>

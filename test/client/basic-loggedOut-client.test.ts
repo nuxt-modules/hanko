@@ -1,6 +1,5 @@
-import { setup } from '@nuxt/test-utils'
-import { createPage, useTestContext } from '@nuxt/test-utils/e2e'
 import { fileURLToPath } from 'node:url'
+import { setup, createPage, useTestContext } from '@nuxt/test-utils'
 import { describe, expect, it } from 'vitest'
 
 await setup({

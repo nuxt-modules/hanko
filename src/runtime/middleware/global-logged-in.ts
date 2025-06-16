@@ -39,7 +39,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
  */
 const isHankoMiddleware = (middleware: unknown) => {
   return (
-    typeof middleware === 'string' &&
-    ['hanko-logged-in', 'hanko-logged-out'].includes(middleware)
+    typeof middleware === 'string'
+    && ['hanko-logged-in', 'hanko-logged-out'].includes(middleware)
   )
 }

@@ -93,7 +93,6 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
 
-
     if (options.augmentContext) {
       addServerHandler({
         middleware: true,

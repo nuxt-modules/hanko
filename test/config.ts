@@ -1,5 +1,5 @@
-import { addImports } from '@nuxt/kit'
 import { resolve } from 'node:path'
+import { addImports } from '@nuxt/kit'
 import type { NuxtConfig } from 'nuxt/schema'
 
 export const enableGlobalMiddleware = {
