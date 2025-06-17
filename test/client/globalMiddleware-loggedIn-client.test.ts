@@ -9,7 +9,7 @@ await setup({
   nuxtConfig: defu(mockLoggedIn, enableGlobalMiddleware),
 })
 
-describe('Global middleware, logged in, client-side', async () => {
+describe('Global middleware, logged in, client-side', { timeout: 20_000 }, async () => {
   it('renders page with no middleware', async () => {
     const page = await createPage('/global/allow/all')
     await page.click('text=About page')

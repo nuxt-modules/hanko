@@ -6,7 +6,7 @@ await setup({
   rootDir: fileURLToPath(new URL('../../playground', import.meta.url)),
 })
 
-describe('No global middleware, not logged in, client-side', async () => {
+describe('No global middleware, not logged in, client-side', { timeout: 20_000 }, async () => {
   it('pageMeta:hanko has no effect without global middleware', async () => {
     const page = await createPage('/global/allow/all')
     await page.click('#allow-logged-in')

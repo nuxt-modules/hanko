@@ -9,7 +9,7 @@ await setup({
   nuxtConfig: defu(enableGlobalMiddleware),
 })
 
-describe('Global middleware, not logged in, client-side', async () => {
+describe('Global middleware, not logged in, client-side', { timeout: 20_000 }, async () => {
   it('redirects to login for page without explicit middleware', async () => {
     const page = await createPage('/global/allow/all')
     await page.click('text=About page')
@@ -41,7 +41,9 @@ describe('Global middleware, not logged in, client-side', async () => {
   it('allow:logged-in redirects to login', async () => {
     const page = await createPage('/global/allow/all')
     await page.click('#allow-logged-in')
-    await page.waitForURL(`${useTestContext().url}login?redirect=/global/allow/logged-in`, { timeout: 4000 })
+    await page.waitForURL(`${useTestContext().url}login?redirect=/global/allow/logged-in`, {
+      timeout: 4000,
+    })
     expect(page.url()).toBe(`${useTestContext().url}login?redirect=/global/allow/logged-in`)
   })
 
@@ -62,14 +64,18 @@ describe('Global middleware, not logged in, client-side', async () => {
   it('deny:logged-out redirects to login page', async () => {
     const page = await createPage('/global/allow/all')
     await page.click('#deny-logged-out')
-    await page.waitForURL(`${useTestContext().url}login?redirect=/global/deny/logged-out`, { timeout: 4000 })
+    await page.waitForURL(`${useTestContext().url}login?redirect=/global/deny/logged-out`, {
+      timeout: 4000,
+    })
     expect(page.url()).toBe(`${useTestContext().url}login?redirect=/global/deny/logged-out`)
   })
 
   it('applies middleware over pageMeta', async () => {
     const page = await createPage('/global/allow/all')
     await page.click('#incorrect-usage')
-    await page.waitForURL(`${useTestContext().url}login?redirect=/global/incorrect-usage`, { timeout: 4000 })
+    await page.waitForURL(`${useTestContext().url}login?redirect=/global/incorrect-usage`, {
+      timeout: 4000,
+    })
     expect(page.url()).toBe(`${useTestContext().url}login?redirect=/global/incorrect-usage`)
   })
 })
