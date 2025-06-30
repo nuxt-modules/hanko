@@ -59,7 +59,7 @@
     "@nuxt/module-builder": "1.0.1",
     "@nuxt/schema": "3.17.5",
     "@nuxt/test-utils": "3.19.1",
-    "@types/node": "22.15.32",
+    "@types/node": "22.15.34",
     "@vitest/coverage-v8": "3.2.4",
     "bumpp": "10.2.0",
     "eslint": "9.29.0",
@@ -72,5 +72,5 @@
     "@nuxt/kit": "3.17.5",
     "@nuxtjs/hanko": "link:."
   },
-  "packageManager": "pnpm@10.12.2"
+  "packageManager": "pnpm@10.12.4"
 }
