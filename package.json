@@ -55,13 +55,13 @@
     "ufo": "^1.5.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "1.8.0",
+    "@nuxt/eslint-config": "1.9.0",
     "@nuxt/module-builder": "1.0.2",
     "@nuxt/schema": "4.0.3",
     "@nuxt/test-utils": "3.19.2",
-    "@types/node": "22.17.1",
+    "@types/node": "22.17.2",
     "@vitest/coverage-v8": "3.2.4",
-    "bumpp": "10.2.2",
+    "bumpp": "10.2.3",
     "eslint": "9.33.0",
     "h3": "1.15.4",
     "nuxt": "4.0.3",
