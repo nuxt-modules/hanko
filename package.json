@@ -65,12 +65,12 @@
     "eslint": "9.37.0",
     "h3": "1.15.4",
     "nuxt": "4.1.2",
-    "playwright": "1.55.1",
+    "playwright": "1.56.0",
     "vitest": "3.2.4"
   },
   "resolutions": {
     "@nuxt/kit": "^4.0.0",
     "@nuxtjs/hanko": "link:."
   },
-  "packageManager": "pnpm@10.18.0"
+  "packageManager": "pnpm@10.18.1"
 }
