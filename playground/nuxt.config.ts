@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/hanko'],
+  modules: ['@nullix/nuxtjs-hanko'],
   // Make the app look a bit nicer
   app: {
     head: {

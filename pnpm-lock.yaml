@@ -6,7 +6,7 @@ settings:
 
 overrides:
   '@nuxt/kit': ^4.0.0
-  '@nuxtjs/hanko': link:.
+  '@nullix/nuxtjs-hanko': link:.
 
 importers:
 
@@ -67,7 +67,7 @@ importers:
 
   playground:
     devDependencies:
-      '@nuxtjs/hanko':
+      '@nullix/nuxtjs-hanko':
         specifier: link:..
         version: link:..
       nuxt:

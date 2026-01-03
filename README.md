@@ -19,7 +19,7 @@
 
 ## Installation
 
-Install and add `@nuxtjs/hanko` to your `nuxt.config`.
+Install and add `@nullix/nuxtjs-hanko` to your `nuxt.config`.
 
 ```bash
 npx nuxi@latest module add hanko
@@ -27,7 +27,7 @@ npx nuxi@latest module add hanko
 
 ```js
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/hanko'],
+  modules: ['@nullix/nuxtjs-hanko'],
   hanko: {
     // You can also configure this by setting NUXT_PUBLIC_HANKO_API_URL at runtime
     apiURL: '<YOUR_API_URL>',
@@ -111,10 +111,10 @@ Published under the [MIT License](./LICENCE).
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/hanko?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/hanko
-[npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/hanko?style=flat-square
-[npm-downloads-href]: https://npm.chart.dev/@nuxtjs/hanko
+[npm-version-src]: https://img.shields.io/npm/v/@nullix/nuxtjs-hanko?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nullix/nuxtjs-hanko
+[npm-downloads-src]: https://img.shields.io/npm/dm/@nullix/nuxtjs-hanko?style=flat-square
+[npm-downloads-href]: https://npm.chart.dev/@nullix/nuxtjs-hanko
 [github-actions-src]: https://img.shields.io/github/actions/workflow/status/nuxt-modules/hanko/ci.yml?branch=main
 [github-actions-href]: https://github.com/nuxt-modules/hanko/actions?query=workflow%3Aci
 [codecov-src]: https://img.shields.io/codecov/c/gh/nuxt-modules/hanko/main?style=flat-square

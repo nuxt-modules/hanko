@@ -8,7 +8,7 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "@nuxtjs/hanko": "latest",
+    "@nullix/nuxtjs-hanko": "latest",
     "nuxt": "4.2.2"
   }
 }
