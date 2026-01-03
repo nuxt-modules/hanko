@@ -1,7 +1,7 @@
 {
-  "name": "@nuxtjs/hanko",
-  "version": "1.0.0",
-  "description": "Hanko integration for Nuxt",
+  "name": "@nullix/nuxtjs-hanko",
+  "version": "2.0.0",
+  "description": "Hanko V2 integration for Nuxt By Harm-Nullix",
   "keywords": [
     "authentication",
     "webauthn",
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nuxt-modules/hanko.git"
+    "url": "git+https://github.com/Harm-Nullix/nuxt-hanko.git"
   },
   "license": "MIT",
   "type": "module",
@@ -70,7 +70,7 @@
   },
   "resolutions": {
     "@nuxt/kit": "^4.0.0",
-    "@nuxtjs/hanko": "link:."
+    "@nullix/nuxtjs-hanko": "link:."
   },
   "packageManager": "pnpm@10.26.2"
 }
