@@ -1,6 +1,6 @@
 {
   "name": "@nullix/nuxtjs-hanko",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Hanko V2 integration for Nuxt By Harm-Nullix",
   "keywords": [
     "authentication",
@@ -42,7 +42,7 @@
     "dev": "nuxt dev playground",
     "dev:build": "nuxt build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
-    "release": "pnpm lint && pnpm test && bumpp && pnpm publish",
+    "release": "pnpm lint && pnpm test && bumpp && pnpm publish --access public",
     "lint": "pnpm lint:all:eslint",
     "lint:all:eslint": "pnpm lint:eslint .",
     "lint:eslint": "eslint --fix",
