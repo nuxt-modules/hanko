@@ -1,5 +1,4 @@
-import { Hanko } from '@teamhanko/hanko-elements'
-import { useRuntimeConfig, useState, toValue } from '#imports'
+import { useNuxtApp } from '#app'
 
 /**
  * This composable returns a Hanko instance.
@@ -10,17 +9,5 @@ export function useHanko() {
   if (import.meta.server) {
     return null
   }
-  const hankoConfig = useRuntimeConfig().public.hanko
-
-  const hanko = useState(
-    'single-hanko-instance',
-    () =>
-      new Hanko(hankoConfig.apiURL, {
-        cookieName: hankoConfig.cookieName,
-        localStorageKey: hankoConfig.storageKey,
-        cookieSameSite: hankoConfig.cookieSameSite,
-        cookieDomain: hankoConfig.cookieDomain,
-      }),
-  )
-  return toValue(hanko)
+  return useNuxtApp().$hanko
 }

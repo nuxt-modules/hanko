@@ -4,7 +4,7 @@ definePageMeta({
 })
 const hanko = useHanko()
 function logout() {
-  hanko!.user.logout()
+  hanko!.logout()
 }
 </script>
 
@@ -20,7 +20,10 @@ function logout() {
     })
       </code></pre>
     <button @click="logout">
-      Log me out
+      Log me out by composable
+    </button>
+    <button @click="$hanko!.logout()">
+      Log me out by provide
     </button>
   </div>
 </template>
