@@ -1,4 +1,4 @@
-import { defineNuxtRouteMiddleware, navigateTo, useRouter, useAppConfig, useHanko, useRequestEvent } from '#imports'
+import { defineNuxtRouteMiddleware, navigateTo, useRouter, useAppConfig, useNuxtApp, useRequestEvent } from '#imports'
 
 export default defineNuxtRouteMiddleware(async (to) => {
   const redirects = useAppConfig().hanko.redirects
@@ -12,7 +12,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return
   }
 
-  const hanko = useHanko()!
+  const hanko = useNuxtApp().$hanko!
 
   if ((await hanko.getUser().catch(() => null)) && to.path !== redirects.home) {
     return navigateTo(redirects.home)
