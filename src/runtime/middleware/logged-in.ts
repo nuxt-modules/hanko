@@ -1,6 +1,7 @@
 import { withQuery } from 'ufo'
-import type { RouteMiddleware } from 'nuxt/app'
+import type { RouteMiddleware } from '#app'
 import { defineNuxtRouteMiddleware, navigateTo, useRouter, useAppConfig, useHanko, useRequestEvent } from '#imports'
+import type {} from 'nuxt/app'
 
 export const hankoLoggedIn = (async (to) => {
   const redirects = useAppConfig().hanko.redirects
