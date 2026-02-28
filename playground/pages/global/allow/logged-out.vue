@@ -5,12 +5,14 @@ definePageMeta({ hanko: { allow: 'logged-out' } })
 <template>
   <main>
     <h1>GlobalMiddleware: allow loggedOut</h1>
-    <p>
-      Only logged out users can see this page <pre>definePageMeta({
+    <div>
+      Only logged out users can see this page
+      <pre>
+definePageMeta({
   hanko: {
     allow: 'logged-out',
   }
 })</pre>
-    </p>
+    </div>
   </main>
 </template>

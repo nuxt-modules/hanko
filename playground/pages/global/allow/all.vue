@@ -9,12 +9,14 @@ definePageMeta({
 <template>
   <main>
     <h1>GlobalMiddleware: allow all</h1>
-    <p>
-      This page is accessible for both logged in and logged out users. <pre>definePageMeta({
+    <div>
+      This page is accessible for both logged in and logged out users.
+      <pre>
+definePageMeta({
   hanko: {
     allow: 'all',
   }
 })</pre>
-    </p>
+    </div>
   </main>
 </template>
