@@ -70,6 +70,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.appConfig = defu(nuxt.options.appConfig, {
       hanko: {
         redirects: options.redirects,
+        globalMiddleware: options.globalMiddleware,
       },
     })
 
@@ -123,11 +124,11 @@ export default defineNuxtModule<ModuleOptions>({
       imports: ['useHanko'],
     })
     addImportsSources({
-      from: resolver.resolve('./runtime/middleware/logged-in.ts'),
+      from: resolver.resolve('./runtime/middleware/logged-in'),
       imports: ['hankoLoggedIn'],
     })
     addImportsSources({
-      from: resolver.resolve('./runtime/middleware/logged-out.ts'),
+      from: resolver.resolve('./runtime/middleware/logged-out'),
       imports: ['hankoLoggedOut'],
     })
 

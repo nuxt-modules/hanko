@@ -1,5 +1,10 @@
+<script setup lang="ts">
+const nuxtConfig = useAppConfig()
+const isGlobalMiddleware = computed(() => nuxtConfig.hanko.globalMiddleware)
+</script>
+
 <template>
-  <nav>
+  <nav v-if="!isGlobalMiddleware">
     <NuxtLink to="/">
       Go home
     </NuxtLink>
@@ -16,8 +21,7 @@
       About page
     </NuxtLink>
   </nav>
-  <NuxtPage />
-  <nav>
+  <nav v-else>
     <NuxtLink
       id="allow-all"
       to="/global/allow/all"
@@ -55,4 +59,5 @@
       Incorrect usage
     </NuxtLink>
   </nav>
+  <NuxtPage />
 </template>
