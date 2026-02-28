@@ -91,6 +91,11 @@ export default defineNuxtModule<ModuleOptions>({
         path: resolver.resolve('./runtime/middleware/global-logged-in'),
         global: true,
       })
+      nuxt.hook('prepare:types', ({ references }) => {
+        references.push({
+          path: resolver.resolve('./runtime/page-meta.d.ts'),
+        })
+      })
     }
 
     if (options.augmentContext) {
