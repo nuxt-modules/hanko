@@ -94,7 +94,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
       nuxt.hook('prepare:types', ({ references }) => {
         references.push({
-          path: resolver.resolve('./runtime/page-meta.d.ts'),
+          path: resolver.resolve('./page-meta-global.d.ts'),
         })
       })
     }
