@@ -2,11 +2,14 @@
 const nuxtConfig = useAppConfig()
 const isGlobalMiddleware = computed(() => nuxtConfig.hanko.globalMiddleware)
 const isTest = computed(() => process.env.VITEST === 'true')
+
+const showNav = computed(() => isTest.value || !isGlobalMiddleware.value)
+const showGlobalNav = computed(() => isTest.value || isGlobalMiddleware.value)
 </script>
 
 <template>
   <nav>
-    <template v-if="isTest || !isGlobalMiddleware">
+    <template v-if="showNav">
       <NuxtLink to="/">
         Go home
       </NuxtLink>
@@ -24,7 +27,8 @@ const isTest = computed(() => process.env.VITEST === 'true')
       </NuxtLink>
     </template>
 
-    <template v-if="isTest || isGlobalMiddleware">
+      <!-- Global middleware -->
+    <template v-if="showGlobalNav">
       <NuxtLink
         id="allow-all"
         to="/global/allow/all"

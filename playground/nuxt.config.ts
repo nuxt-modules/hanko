@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/hanko'],
+  // Expose VITEST to the client when running under Vitest so the nav shows both link groups in tests
+  vite: {
+    define: {
+      'process.env.VITEST': JSON.stringify(process.env.VITEST ?? ''),
+    },
+  },
   // Make the app look a bit nicer
   app: {
     head: {
