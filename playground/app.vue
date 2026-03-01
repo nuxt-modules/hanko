@@ -27,7 +27,7 @@ const showGlobalNav = computed(() => isTest.value || isGlobalMiddleware.value)
       </NuxtLink>
     </template>
 
-      <!-- Global middleware -->
+    <!-- Global middleware -->
     <template v-if="showGlobalNav">
       <NuxtLink
         id="allow-all"

@@ -1,11 +1,5 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/hanko'],
-  // Expose VITEST to the client when running under Vitest so the nav shows both link groups in tests
-  vite: {
-    define: {
-      'process.env.VITEST': JSON.stringify(process.env.VITEST ?? ''),
-    },
-  },
   // Make the app look a bit nicer
   app: {
     head: {
@@ -19,6 +13,12 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2024-08-19',
+  // Expose VITEST to the client when running under Vitest so the nav shows both link groups in tests
+  vite: {
+    define: {
+      'process.env.VITEST': JSON.stringify(process.env.VITEST ?? ''),
+    },
+  },
   hanko: {
     // You need to provide the Hanko API URL in order for it to work
     apiURL: '',
