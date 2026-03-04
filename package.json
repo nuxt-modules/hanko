@@ -55,22 +55,22 @@
     "ufo": "^1.5.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "1.12.1",
+    "@nuxt/eslint-config": "1.15.2",
     "@nuxt/module-builder": "1.0.2",
-    "@nuxt/schema": "4.2.2",
-    "@nuxt/test-utils": "3.21.0",
-    "@types/node": "24.10.4",
-    "@vitest/coverage-v8": "4.0.16",
-    "bumpp": "10.3.2",
-    "eslint": "9.39.2",
-    "h3": "1.15.4",
-    "nuxt": "4.2.2",
-    "playwright": "1.57.0",
-    "vitest": "4.0.16"
+    "@nuxt/schema": "4.3.1",
+    "@nuxt/test-utils": "4.0.0",
+    "@types/node": "24.11.0",
+    "@vitest/coverage-v8": "4.0.18",
+    "bumpp": "10.4.1",
+    "eslint": "10.0.2",
+    "h3": "1.15.5",
+    "nuxt": "4.3.1",
+    "playwright": "1.58.2",
+    "vitest": "4.0.18"
   },
   "resolutions": {
     "@nuxt/kit": "^4.0.0",
     "@nuxtjs/hanko": "link:."
   },
-  "packageManager": "pnpm@10.26.2"
+  "packageManager": "pnpm@10.30.3"
 }
