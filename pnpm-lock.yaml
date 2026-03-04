@@ -16,8 +16,8 @@ importers:
         specifier: ^4.0.0
         version: 4.2.2(magicast@0.5.1)
       '@teamhanko/hanko-elements':
-        specifier: 2.3.0
-        version: 2.3.0
+        specifier: 2.5.0
+        version: 2.5.0
       defu:
         specifier: ^6.1.4
         version: 6.1.4
@@ -231,8 +231,8 @@ packages:
     resolution: {integrity: sha512-+tv3z+SPp+gqTIcImN9o0hqE9xyfQjI1XD9pL6NuKjua9B1y7mNYv0S9cP+QEbA4ppVgGZEmKOvHX5G5Ei1CVA==}
     engines: {node: '>=18.0.0'}
 
-  '@denysvuika/preact-translate@0.5.1':
-    resolution: {integrity: sha512-qqKkpjzR8E55nlLA+H3gP9Q99mCCWiTtRupVQBh8YRZljX+Q8YbsaJtV3F+TX4DR4lV8NLgvv2+sSUcHoWvNtQ==}
+  '@denysvuika/preact-translate@0.6.0':
+    resolution: {integrity: sha512-LPzcbCc9PD+HghgZe4rjWB3wQm05ibQ37Zvh0K8MwIwbPtMZIz9iBe9+9z9uu8yVFNiuswABvUZKaNrDngqmPw==}
     peerDependencies:
       preact: '>=10.13.0'
 
@@ -1406,11 +1406,11 @@ packages:
     peerDependencies:
       eslint: '>=9.0.0'
 
-  '@teamhanko/hanko-elements@2.3.0':
-    resolution: {integrity: sha512-hMDecxL4gNNxk8mOwWxqaRvguSNPZ9QPrUVcjFP6kwZN3wHj47iD4A+htWFB+VKLWAqyDiioyx/MAM4HhPMsAQ==}
+  '@teamhanko/hanko-elements@2.5.0':
+    resolution: {integrity: sha512-lWh9kWp5+ANIjRdxC/ZbNfLHp42GR6zi6wJol0eyLmlMq2yiWyzdXA2MSEh30KtT256qHRhvu+phYx8UFtpO4A==}
 
-  '@teamhanko/hanko-frontend-sdk@2.3.0':
-    resolution: {integrity: sha512-rZkyWddmozkgpsC0mN+1FuxG2L7OCYsD3D040Njp1o73VyZFpvZ1rbBQv7eOI3V7qZc4rtgKc+fPizM1Hp2pCQ==}
+  '@teamhanko/hanko-frontend-sdk@2.5.0':
+    resolution: {integrity: sha512-JFgQa/FDZZsRPQ4qVKpFWfSbtsiaOtePITXpnQdK8XngKNU+bLnf/9J+TWq1cOADZHdDD2r/dDWdngku7t2JKw==}
 
   '@teamhanko/preact-custom-element@4.2.2':
     resolution: {integrity: sha512-3djCQr25IxQIgpidxD8J0fTQ7/hMuoa5Nmv7delQc6sX4kXgv9e/pE01cywpmGZLi69H1KUH4dmZ4cPPJQrsQQ==}
@@ -3473,8 +3473,8 @@ packages:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  preact@10.27.2:
-    resolution: {integrity: sha512-5SYSgFKSyhCbk6SrXyMpqjb5+MQBgfvEKE/OC+PujcY34sOpqtr+0AZQtPYx5IA6VxynQ7rUPCtKzyovpj9Bpg==}
+  preact@10.28.4:
+    resolution: {integrity: sha512-uKFfOHWuSNpRFVTnljsCluEFq57OKT+0QdOiQo8XWnQ/pSvg7OpX5eNOejELXJMWy+BwM2nobz0FkvzmnpCNsQ==}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -4562,9 +4562,9 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@denysvuika/preact-translate@0.5.1(preact@10.27.2)':
+  '@denysvuika/preact-translate@0.6.0(preact@10.28.4)':
     dependencies:
-      preact: 10.27.2
+      preact: 10.28.4
 
   '@dxup/nuxt@0.2.2(magicast@0.5.1)':
     dependencies:
@@ -5663,21 +5663,21 @@ snapshots:
       estraverse: 5.3.0
       picomatch: 4.0.3
 
-  '@teamhanko/hanko-elements@2.3.0':
+  '@teamhanko/hanko-elements@2.5.0':
     dependencies:
-      '@denysvuika/preact-translate': 0.5.1(preact@10.27.2)
-      '@teamhanko/hanko-frontend-sdk': 2.3.0
-      '@teamhanko/preact-custom-element': 4.2.2(preact@10.27.2)
+      '@denysvuika/preact-translate': 0.6.0(preact@10.28.4)
+      '@teamhanko/hanko-frontend-sdk': 2.5.0
+      '@teamhanko/preact-custom-element': 4.2.2(preact@10.28.4)
       classnames: 2.5.1
-      preact: 10.27.2
+      preact: 10.28.4
 
-  '@teamhanko/hanko-frontend-sdk@2.3.0':
+  '@teamhanko/hanko-frontend-sdk@2.5.0':
     dependencies:
       '@types/js-cookie': 3.0.6
 
-  '@teamhanko/preact-custom-element@4.2.2(preact@10.27.2)':
+  '@teamhanko/preact-custom-element@4.2.2(preact@10.28.4)':
     dependencies:
-      preact: 10.27.2
+      preact: 10.28.4
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
@@ -8048,7 +8048,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  preact@10.27.2: {}
+  preact@10.28.4: {}
 
   prelude-ls@1.2.1: {}
 
