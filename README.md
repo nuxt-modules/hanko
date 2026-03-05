@@ -112,9 +112,9 @@ Published under the [MIT License](./LICENCE).
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/hanko?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/hanko
-[npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/hanko?style=flat-square
+[npm-version-src]: https://npmx.dev/api/registry/badge/version/@nuxtjs/hanko
+[npm-version-href]: https://npmx.dev/package/@nuxtjs/hanko
+[npm-downloads-src]: https://npmx.dev/api/registry/badge/downloads/@nuxtjs/hanko
 [npm-downloads-href]: https://npm.chart.dev/@nuxtjs/hanko
 [github-actions-src]: https://img.shields.io/github/actions/workflow/status/nuxt-modules/hanko/ci.yml?branch=main
 [github-actions-href]: https://github.com/nuxt-modules/hanko/actions?query=workflow%3Aci
