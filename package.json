@@ -62,7 +62,7 @@
     "@types/node": "24.12.2",
     "@vitest/coverage-v8": "4.1.2",
     "bumpp": "11.0.1",
-    "eslint": "10.1.0",
+    "eslint": "10.2.0",
     "h3": "1.15.11",
     "nuxt": "4.4.2",
     "playwright": "1.59.1",
