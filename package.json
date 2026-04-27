@@ -60,13 +60,13 @@
     "@nuxt/schema": "4.4.2",
     "@nuxt/test-utils": "4.0.0",
     "@types/node": "24.12.2",
-    "@vitest/coverage-v8": "4.1.4",
+    "@vitest/coverage-v8": "4.1.5",
     "bumpp": "11.0.1",
     "eslint": "10.2.1",
     "h3": "1.15.11",
     "nuxt": "4.4.2",
     "playwright": "1.59.1",
-    "vitest": "4.1.4"
+    "vitest": "4.1.5"
   },
   "resolutions": {
     "@nuxt/kit": "^4.0.0",
