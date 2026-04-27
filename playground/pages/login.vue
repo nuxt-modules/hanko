@@ -8,10 +8,13 @@ definePageMeta({
   <main>
     <h1>Log in</h1>
     <p>
-      Only logged out users can see this page<pre>definePageMeta({
-  middleware: ['hanko-logged-out'],
-})</pre>
+      Only logged out users can see this page
     </p>
+    <pre><code>
+    definePageMeta({
+      middleware: ['hanko-logged-out'],
+    })
+      </code></pre>
     <p v-if="$route.query.redirect">
       You were redirected here from {{ $route.query.redirect }}, once you login, you'll be sent back automatically!
     </p>
