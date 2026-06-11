@@ -58,14 +58,14 @@
   "devDependencies": {
     "@nuxt/eslint-config": "1.15.2",
     "@nuxt/module-builder": "1.0.2",
-    "@nuxt/schema": "4.4.7",
+    "@nuxt/schema": "4.4.8",
     "@nuxt/test-utils": "4.0.3",
     "@types/node": "24.13.1",
     "@vitest/coverage-v8": "4.1.8",
     "bumpp": "11.1.0",
     "eslint": "10.4.1",
     "h3": "1.15.11",
-    "nuxt": "4.4.7",
+    "nuxt": "4.4.8",
     "playwright": "1.60.0",
     "vitest": "4.1.8"
   },
