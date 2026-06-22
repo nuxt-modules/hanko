@@ -66,8 +66,8 @@
     "eslint": "10.5.0",
     "h3": "1.15.11",
     "nuxt": "4.4.8",
-    "playwright": "1.60.0",
+    "playwright": "1.61.0",
     "vitest": "4.1.8"
   },
-  "packageManager": "pnpm@11.6.0"
+  "packageManager": "pnpm@11.8.0"
 }
