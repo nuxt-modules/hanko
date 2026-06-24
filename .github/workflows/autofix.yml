@@ -20,6 +20,9 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm install
 
+      - name: 🎭 Install playwright
+        run: pnpm exec playwright install
+
       - name: 🚧 Set up project
         run: pnpm dev:prepare
 
