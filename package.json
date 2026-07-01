@@ -1,7 +1,7 @@
 {
-  "name": "@nullix/nuxtjs-hanko",
-  "version": "2.0.5",
-  "description": "Hanko V2 integration for Nuxt By Harm-Nullix",
+  "name": "@nuxtjs/hanko",
+  "version": "3.0.0",
+  "description": "Hanko integration for Nuxt",
   "keywords": [
     "authentication",
     "webauthn",
@@ -13,10 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Harm-Nullix/nuxt-hanko.git"
-  },
-  "publishConfig": {
-    "access": "public"
+    "url": "git+https://github.com/nuxt-modules/hanko.git"
   },
   "license": "MIT",
   "type": "module",
@@ -38,11 +35,12 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build build",
+    "prepack": "pnpm build",
+    "build": "nuxt-module-build prepare && nuxt-module-build build",
     "dev": "nuxt dev playground",
     "dev:build": "nuxt build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
-    "release": "pnpm lint && pnpm test && bumpp && pnpm publish --access public",
+    "release": "pnpm lint && pnpm test && bumpp && pnpm publish",
     "lint": "pnpm lint:all:eslint",
     "lint:all:eslint": "pnpm lint:eslint .",
     "lint:eslint": "eslint --fix",
@@ -52,28 +50,24 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.0.0",
-    "@teamhanko/hanko-elements": "2.3.0",
+    "@teamhanko/hanko-elements": "3.0.0",
     "defu": "^6.1.4",
     "jose": "^6.0.0",
     "ufo": "^1.5.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "1.15.2",
+    "@nuxt/eslint-config": "1.16.0",
     "@nuxt/module-builder": "1.0.2",
-    "@nuxt/schema": "4.3.1",
-    "@nuxt/test-utils": "4.0.0",
-    "@types/node": "24.11.0",
-    "@vitest/coverage-v8": "4.0.18",
-    "bumpp": "10.4.1",
-    "eslint": "10.0.2",
-    "h3": "1.15.5",
-    "nuxt": "4.3.1",
-    "playwright": "1.58.2",
-    "vitest": "4.0.18"
+    "@nuxt/schema": "4.4.8",
+    "@nuxt/test-utils": "4.0.3",
+    "@types/node": "24.13.2",
+    "@vitest/coverage-v8": "4.1.9",
+    "bumpp": "11.1.0",
+    "eslint": "10.5.0",
+    "h3": "1.15.11",
+    "nuxt": "4.4.8",
+    "playwright": "1.61.0",
+    "vitest": "4.1.9"
   },
-  "resolutions": {
-    "@nuxt/kit": "^4.0.0",
-    "@nullix/nuxtjs-hanko": "link:."
-  },
-  "packageManager": "pnpm@10.30.3"
+  "packageManager": "pnpm@11.8.0"
 }
