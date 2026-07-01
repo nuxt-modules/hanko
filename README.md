@@ -4,6 +4,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Github Actions][github-actions-src]][github-actions-href]
 [![Codecov][codecov-src]][codecov-href]
+[![nuxt.care health](https://img.shields.io/endpoint?url=https://nuxt.care/api/badge/hanko)](https://nuxt.care/?search=hanko)
 
 > [Hanko](https://www.hanko.io/) integration for [Nuxt](https://nuxt.com)
 
@@ -111,9 +112,9 @@ Published under the [MIT License](./LICENCE).
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/@nullix/nuxtjs-hanko?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@nullix/nuxtjs-hanko
-[npm-downloads-src]: https://img.shields.io/npm/dm/@nullix/nuxtjs-hanko?style=flat-square
+[npm-version-src]: https://npmx.dev/api/registry/badge/version/@nullix/nuxtjs-hanko
+[npm-version-href]: https://npmx.dev/package/@nullix/nuxtjs-hanko
+[npm-downloads-src]: https://npmx.dev/api/registry/badge/downloads/@nullix/nuxtjs-hanko
 [npm-downloads-href]: https://npm.chart.dev/@nullix/nuxtjs-hanko
 [github-actions-src]: https://img.shields.io/github/actions/workflow/status/nuxt-modules/hanko/ci.yml?branch=main
 [github-actions-href]: https://github.com/nuxt-modules/hanko/actions?query=workflow%3Aci
