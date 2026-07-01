@@ -35,7 +35,8 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build build",
+    "prepack": "pnpm build",
+    "build": "nuxt-module-build prepare && nuxt-module-build build",
     "dev": "nuxt dev playground",
     "dev:build": "nuxt build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
@@ -55,22 +56,18 @@
     "ufo": "^1.5.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "1.12.1",
+    "@nuxt/eslint-config": "1.16.0",
     "@nuxt/module-builder": "1.0.2",
-    "@nuxt/schema": "4.2.2",
-    "@nuxt/test-utils": "3.21.0",
-    "@types/node": "24.10.4",
-    "@vitest/coverage-v8": "4.0.16",
-    "bumpp": "10.3.2",
-    "eslint": "9.39.2",
-    "h3": "1.15.4",
-    "nuxt": "4.2.2",
-    "playwright": "1.57.0",
-    "vitest": "4.0.16"
+    "@nuxt/schema": "4.4.8",
+    "@nuxt/test-utils": "4.0.3",
+    "@types/node": "24.13.2",
+    "@vitest/coverage-v8": "4.1.9",
+    "bumpp": "11.1.0",
+    "eslint": "10.5.0",
+    "h3": "1.15.11",
+    "nuxt": "4.4.8",
+    "playwright": "1.61.0",
+    "vitest": "4.1.9"
   },
-  "resolutions": {
-    "@nuxt/kit": "^4.0.0",
-    "@nullix/nuxtjs-hanko": "link:."
-  },
-  "packageManager": "pnpm@10.26.2"
+  "packageManager": "pnpm@11.8.0"
 }
