@@ -63,6 +63,7 @@ export default defineNuxtModule<ModuleOptions>({
         cookieName: options.cookieName!,
         cookieSameSite: options.cookieSameSite || undefined,
         cookieDomain: options.cookieDomain || undefined,
+        storageKey: options.storageKey || undefined,
         components: options.components || {},
       } satisfies PublicRuntimeConfig['hanko'],
     }) as PublicRuntimeConfig

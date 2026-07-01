@@ -15,6 +15,9 @@
     "type": "git",
     "url": "git+https://github.com/nuxt-modules/hanko.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "type": "module",
   "exports": {
