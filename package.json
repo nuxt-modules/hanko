@@ -1,6 +1,6 @@
 {
   "name": "@nullix/nuxtjs-hanko",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Hanko V3 integration for Nuxt By Harm-Nullix",
   "keywords": [
     "authentication",
