@@ -16,8 +16,8 @@ importers:
         specifier: ^4.0.0
         version: 4.4.8(magicast@0.5.2)
       '@teamhanko/hanko-elements':
-        specifier: 2.3.0
-        version: 2.3.0
+        specifier: 3.0.0
+        version: 3.0.0
       defu:
         specifier: ^6.1.4
         version: 6.1.7
@@ -67,9 +67,9 @@ importers:
 
   playground:
     devDependencies:
-      '@nuxtjs/hanko':
-        specifier: link:..
-        version: link:..
+      '@nullix/nuxtjs-hanko':
+        specifier: latest
+        version: 2.5.2(magicast@0.5.2)
       nuxt:
         specifier: 4.4.8
         version: 4.4.8(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@babel/plugin-syntax-typescript@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@24.13.2)(@vue/compiler-sfc@3.5.35)(cac@6.7.14)(db0@0.3.4)(eslint@10.5.0(jiti@2.7.0))(ioredis@5.10.1)(magicast@0.5.2)(optionator@0.9.4)(rollup-plugin-visualizer@7.0.1(rollup@4.60.3))(rollup@4.60.3)(terser@5.46.0)(typescript@5.9.3)(vite@7.3.3(@types/node@24.13.2)(jiti@2.7.0)(terser@5.46.0)(yaml@2.9.0))(yaml@2.9.0)
@@ -257,8 +257,8 @@ packages:
   '@colordx/core@5.4.3':
     resolution: {integrity: sha512-kIxYSfA5T8HXjav55UaaH/o/cKivF6jCCGIb8eqtcsfI46wsvlSiT8jMDyrl779qLec3c2c2oHBZo4oAhvbjrQ==}
 
-  '@denysvuika/preact-translate@0.5.1':
-    resolution: {integrity: sha512-qqKkpjzR8E55nlLA+H3gP9Q99mCCWiTtRupVQBh8YRZljX+Q8YbsaJtV3F+TX4DR4lV8NLgvv2+sSUcHoWvNtQ==}
+  '@denysvuika/preact-translate@0.6.0':
+    resolution: {integrity: sha512-LPzcbCc9PD+HghgZe4rjWB3wQm05ibQ37Zvh0K8MwIwbPtMZIz9iBe9+9z9uu8yVFNiuswABvUZKaNrDngqmPw==}
     peerDependencies:
       preact: '>=10.13.0'
 
@@ -887,6 +887,9 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@nullix/nuxtjs-hanko@2.5.2':
+    resolution: {integrity: sha512-bx3v51lfnb/1iBpK2p0nD6MRKIC5tvxs3mQi2lZQQv90+e1b16vlzU5ycUBle7c6rX0fAVZMftx7rjBNecyYww==}
 
   '@nuxt/cli@3.35.2':
     resolution: {integrity: sha512-sCxNnFuYamqippdj+Cj4Nue55yaUvasaneyf2mnowK5/F1TKln/WVqTH18McxQ4baLlIlVapIFovKjJx1L8XMQ==}
@@ -1789,11 +1792,17 @@ packages:
     peerDependencies:
       eslint: ^9.0.0 || ^10.0.0
 
-  '@teamhanko/hanko-elements@2.3.0':
-    resolution: {integrity: sha512-hMDecxL4gNNxk8mOwWxqaRvguSNPZ9QPrUVcjFP6kwZN3wHj47iD4A+htWFB+VKLWAqyDiioyx/MAM4HhPMsAQ==}
+  '@teamhanko/hanko-elements@2.5.0':
+    resolution: {integrity: sha512-lWh9kWp5+ANIjRdxC/ZbNfLHp42GR6zi6wJol0eyLmlMq2yiWyzdXA2MSEh30KtT256qHRhvu+phYx8UFtpO4A==}
+
+  '@teamhanko/hanko-elements@3.0.0':
+    resolution: {integrity: sha512-QExz0qgAOQnmbIFQX6qoRCvV+mj5RnwFmZUAqiI4a/Yz1gErhgYDcJNHq9BCFgnb4PZAn0kA0LUHAqi9QBc3kg==}
 
   '@teamhanko/hanko-frontend-sdk@2.7.0':
     resolution: {integrity: sha512-kI+a8bupz/LE8+ed0YzjuofRvHrlMULJ3p0CV8DL19qQnRjQwuqnH0e0SzUfX5gW9JMyScV0R93/I1bl/vyydQ==}
+
+  '@teamhanko/hanko-frontend-sdk@3.0.0':
+    resolution: {integrity: sha512-O32QQS2Uczjf5mN4Kl59LsEVeiuF9ON6D9cqmTAJV1QlDZUjPAaBk0GOUdBiTr/gMcSOx2u6aeE6MVFY6RkSuw==}
 
   '@teamhanko/preact-custom-element@4.2.2':
     resolution: {integrity: sha512-3djCQr25IxQIgpidxD8J0fTQ7/hMuoa5Nmv7delQc6sX4kXgv9e/pE01cywpmGZLi69H1KUH4dmZ4cPPJQrsQQ==}
@@ -4004,6 +4013,9 @@ packages:
   preact@10.28.3:
     resolution: {integrity: sha512-tCmoRkPQLpBeWzpmbhryairGnhW9tKV6c6gr/w+RhoRoKEJwsjzipwp//1oCpGPOchvSLaAPlpcJi9MwMmoPyA==}
 
+  preact@10.29.3:
+    resolution: {integrity: sha512-D9NL1GAnJZhc3RndVs4gDdxEeU9TcHgywMrhhOsnpdlvFjdbx0gAsLUnH6JEhlJH5giL7Tx5biWPUSEXE/HPzw==}
+
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
@@ -5131,9 +5143,13 @@ snapshots:
 
   '@colordx/core@5.4.3': {}
 
-  '@denysvuika/preact-translate@0.5.1(preact@10.28.3)':
+  '@denysvuika/preact-translate@0.6.0(preact@10.28.3)':
     dependencies:
       preact: 10.28.3
+
+  '@denysvuika/preact-translate@0.6.0(preact@10.29.3)':
+    dependencies:
+      preact: 10.29.3
 
   '@dxup/nuxt@0.4.1(magicast@0.5.2)(typescript@5.9.3)':
     dependencies:
@@ -5549,6 +5565,16 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
+
+  '@nullix/nuxtjs-hanko@2.5.2(magicast@0.5.2)':
+    dependencies:
+      '@nuxt/kit': 4.4.8(magicast@0.5.2)
+      '@teamhanko/hanko-elements': 2.5.0
+      defu: 6.1.7
+      jose: 6.2.3
+      ufo: 1.6.4
+    transitivePeerDependencies:
+      - magicast
 
   '@nuxt/cli@3.35.2(@nuxt/schema@4.4.8)(cac@6.7.14)(magicast@0.5.2)':
     dependencies:
@@ -6387,21 +6413,37 @@ snapshots:
       estraverse: 5.3.0
       picomatch: 4.0.4
 
-  '@teamhanko/hanko-elements@2.3.0':
+  '@teamhanko/hanko-elements@2.5.0':
     dependencies:
-      '@denysvuika/preact-translate': 0.5.1(preact@10.28.3)
+      '@denysvuika/preact-translate': 0.6.0(preact@10.28.3)
       '@teamhanko/hanko-frontend-sdk': 2.7.0
       '@teamhanko/preact-custom-element': 4.2.2(preact@10.28.3)
       classnames: 2.5.1
       preact: 10.28.3
 
+  '@teamhanko/hanko-elements@3.0.0':
+    dependencies:
+      '@denysvuika/preact-translate': 0.6.0(preact@10.29.3)
+      '@teamhanko/hanko-frontend-sdk': 3.0.0
+      '@teamhanko/preact-custom-element': 4.2.2(preact@10.29.3)
+      classnames: 2.5.1
+      preact: 10.29.3
+
   '@teamhanko/hanko-frontend-sdk@2.7.0':
+    dependencies:
+      '@types/js-cookie': 3.0.6
+
+  '@teamhanko/hanko-frontend-sdk@3.0.0':
     dependencies:
       '@types/js-cookie': 3.0.6
 
   '@teamhanko/preact-custom-element@4.2.2(preact@10.28.3)':
     dependencies:
       preact: 10.28.3
+
+  '@teamhanko/preact-custom-element@4.2.2(preact@10.29.3)':
+    dependencies:
+      preact: 10.29.3
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
@@ -8932,6 +8974,8 @@ snapshots:
   powershell-utils@0.1.0: {}
 
   preact@10.28.3: {}
+
+  preact@10.29.3: {}
 
   prelude-ls@1.2.1: {}
 
