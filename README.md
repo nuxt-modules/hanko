@@ -4,6 +4,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Github Actions][github-actions-src]][github-actions-href]
 [![Codecov][codecov-src]][codecov-href]
+[![nuxt.care health](https://img.shields.io/endpoint?url=https://nuxt.care/api/badge/hanko)](https://nuxt.care/?search=hanko)
 
 > [Hanko](https://www.hanko.io/) integration for [Nuxt](https://nuxt.com)
 
