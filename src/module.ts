@@ -28,6 +28,8 @@ export interface ModuleOptions {
     translations?: RegisterOptions['translations']
     translationsLocation?: RegisterOptions['translationsLocation']
     fallbackLanguage?: RegisterOptions['fallbackLanguage']
+    sessionCheckInterval?: RegisterOptions['sessionCheckInterval']
+    sessionTokenLocation?: RegisterOptions['sessionTokenLocation']
   }
 }
 
