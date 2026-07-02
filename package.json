@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/hanko",
-  "version": "1.0.1",
+  "version": "3.0.0",
   "description": "Hanko integration for Nuxt",
   "keywords": [
     "authentication",
@@ -14,6 +14,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nuxt-modules/hanko.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "license": "MIT",
   "type": "module",
@@ -49,11 +52,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.0.0",
-    "@teamhanko/hanko-elements": "1.5.2",
-    "defu": "^6.1.4",
-    "jose": "^6.0.0",
-    "ufo": "^1.5.4"
+    "@nuxt/kit": "^4.4.8",
+    "@teamhanko/hanko-elements": "3.0.0",
+    "defu": "^6.1.7",
+    "jose": "^6.2.3",
+    "ufo": "^1.6.4"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "1.16.0",
