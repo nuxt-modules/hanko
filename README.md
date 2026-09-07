@@ -84,11 +84,11 @@ You can also create your own middleware for full control.
 
 ### Auto-imports
 
-`useHanko` is exposed in the Vue part of your app to allow you direct access to the Hanko API. You can access the current user and much more. **Note**: It will return `null` on the server.
+`useHanko` and `$hanko` is exposed in the Vue part of your app to allow you direct access to the Hanko API. You can access the current user and much more. **Note**: It will return `null` on the server.
 
 ### Server utilities
 
-By default you can access a verified JWT context on `event.context.hanko`. (It will be undefined if the user is not logged in.) If you want to handle this yourself you can set `augmentContext: false`.
+By default, you can access a verified JWT context on `event.context.hanko`. (It will be undefined if the user is not logged in.) If you want to handle this yourself you can set `augmentContext: false`.
 
 `verifyHankoEvent` is exposed in the Nitro part of your app to expose the underlying utility used to create `event.context.hanko` if you want to handle things manually.
 
