@@ -8,7 +8,7 @@ allowBuilds:
 
 overrides:
   "@nuxt/kit": "^4.0.0"
-  "@nuxtjs/hanko": "link:."
+  "@nuxtjs/hanko": "workspace:*"
 
 shamefullyHoist: true
 
