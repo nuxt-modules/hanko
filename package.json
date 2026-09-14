@@ -38,8 +38,9 @@
     "prepack": "pnpm build",
     "build": "nuxt-module-build prepare && nuxt-module-build build",
     "dev": "nuxt dev playground",
+    "dev:nuxt5": "nuxt dev playground-nuxt5",
     "dev:build": "nuxt build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground && nuxt prepare playground-nuxt5",
     "release": "pnpm lint && pnpm test && bumpp && pnpm publish",
     "lint": "pnpm lint:all:eslint",
     "lint:all:eslint": "pnpm lint:eslint .",
@@ -65,6 +66,7 @@
     "bumpp": "12.3.0",
     "eslint": "10.10.0",
     "h3": "1.15.11",
+    "hookable": "6.1.1",
     "nuxt": "4.5.2",
     "playwright": "1.63.0",
     "vitest": "5.0.0"
