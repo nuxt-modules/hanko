@@ -215,16 +215,16 @@ importers:
         specifier: ^4.0.0
         version: 4.5.2(magic-string@1.2.3)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(unplugin@3.3.0(esbuild@0.28.0)(rolldown@1.2.3)(rollup@4.60.3)(vite@8.2.1(@types/node@24.13.4)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.46.0)(yaml@2.9.0)))
       '@teamhanko/hanko-elements':
-        specifier: 3.0.0
+        specifier: ^3.0.0
         version: 3.0.0
       defu:
-        specifier: ^6.1.7
+        specifier: ^6.1.4
         version: 6.1.7
       jose:
-        specifier: ^6.2.3
+        specifier: ^6.0.0
         version: 6.2.12
       ufo:
-        specifier: ^1.6.4
+        specifier: ^1.5.4
         version: 1.6.4
     devDependencies:
       '@nuxt/eslint-config':
