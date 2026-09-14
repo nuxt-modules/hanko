@@ -10,12 +10,12 @@ export const mockLoggedIn = {
       addImports({
         name: 'useHanko',
         as: 'useHanko',
-        from: resolver.resolve('./mocks/useHanko.ts'),
+        from: resolver.resolve('./mocks/use-hanko.ts'),
       })
       addImports({
         name: 'useRequestEvent',
         as: 'useRequestEvent',
-        from: resolver.resolve('./mocks/useRequestEvent.ts'),
+        from: resolver.resolve('./mocks/use-request-event.ts'),
       })
     },
   },
