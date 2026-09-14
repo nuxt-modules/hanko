@@ -62,7 +62,7 @@ export default defineNuxtConfig({
 
 ### Components
 
-To use, you can use the Hanko components anywhere in your app: `<hanko-auth>`, `<hanko-events>` and `<hanko-profile>`. These are web components that will be rendered on the client-side only. Props are typed.
+To use, you can use the Hanko components anywhere in your app: `<hanko-auth>`, `<hanko-login>`, `<hanko-registration>`, `<hanko-events>` and `<hanko-profile>`. These are web components that will be rendered on the client-side only. Props are typed.
 
 You can turn auto-registration of components off (if you wish to use Hanko just on the server side or programmatically) with `registerComponents: false`.
 
