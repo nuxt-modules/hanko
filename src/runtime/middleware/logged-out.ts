@@ -1,7 +1,6 @@
-import type { RouteMiddleware } from '#app'
 import { defineNuxtRouteMiddleware, navigateTo, useRouter, useAppConfig, useHanko, useRequestEvent } from '#imports'
 
-export const hankoLoggedOut = (async (to) => {
+export default defineNuxtRouteMiddleware(async (to) => {
   const redirects = useAppConfig().hanko.redirects
 
   if (import.meta.server) {
@@ -30,6 +29,4 @@ export const hankoLoggedOut = (async (to) => {
     removeHankoHook()
     removeRouterHook()
   })
-}) satisfies RouteMiddleware
-
-export default defineNuxtRouteMiddleware(hankoLoggedOut)
+})

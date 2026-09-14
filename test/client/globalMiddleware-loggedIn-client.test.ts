@@ -1,12 +1,11 @@
 import { fileURLToPath } from 'node:url'
 import { setup, createPage, useTestContext } from '@nuxt/test-utils'
-import defu from 'defu'
 import { describe, expect, it } from 'vitest'
-import { enableGlobalMiddleware, mockLoggedIn } from '../config'
+import { mockLoggedIn } from '../config'
 
 await setup({
   rootDir: fileURLToPath(new URL('../../playground', import.meta.url)),
-  nuxtConfig: defu(mockLoggedIn, enableGlobalMiddleware),
+  nuxtConfig: { ...mockLoggedIn, hanko: { globalMiddleware: true } },
 })
 
 describe('Global middleware, logged in, client-side', { timeout: 20_000 }, async () => {

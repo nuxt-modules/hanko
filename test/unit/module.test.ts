@@ -1,10 +1,12 @@
 import { describe, it, expect } from 'vitest'
-import { setupModule, pluginSources, resolveMiddleware, resolveTypeReferences } from '../utils/nuxt'
+import { setupModule, pluginSources, resolveMiddleware, resolveTypeReferences, resolvePages } from '../utils/nuxt'
 
 interface NitroConfigStub {
   externals?: { inline: string[] }
   imports?: { imports?: Array<{ name: string, from: string }> }
 }
+const page = (path: string, meta?: Record<string, unknown>) => ({ name: path, path, file: `pages.vue`, ...meta ? { meta } : {} })
+
 interface ViteConfigStub {
   resolve: { alias?: Record<string, string> }
 }
@@ -121,6 +123,24 @@ describe('registered runtime code', () => {
 
     expect(middleware.map(item => item.name).sort()).toStrictEqual(['hanko-logged-in', 'hanko-logged-out'])
     expect(middleware.every(item => item.path.includes('runtime/middleware/'))).toBe(true)
+  })
+
+  it('registers page meta types when the global middleware is enabled', async () => {
+    const nuxt = await setupModule({ globalMiddleware: true })
+    const template = nuxt.options.build.templates.find(item => item.filename === 'types/hanko-page-meta.d.ts')
+
+    expect(nuxt.options.experimental.extraPageMetaExtractionKeys).toStrictEqual(['hanko'])
+    expect(template?.getContents?.({} as never)).toContain('interface PageMeta')
+    expect(await resolveTypeReferences(nuxt)).toContainEqual(expect.stringContaining('types/hanko-page-meta.d.ts'))
+  })
+
+  it('leaves pages and page meta types alone by default', async () => {
+    const nuxt = await setupModule()
+    const pages = await resolvePages(nuxt, [page('/about'), page('/login', { hanko: { allow: 'logged-out' } })])
+
+    expect(pages.map(item => item.meta?.middleware)).toStrictEqual([undefined, undefined])
+    expect(nuxt.options.experimental.extraPageMetaExtractionKeys).toBeUndefined()
+    expect(nuxt.options.build.templates.map(item => item.filename)).not.toContain('types/hanko-page-meta.d.ts')
   })
 
   it('auto-imports useHanko', async () => {

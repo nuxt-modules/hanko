@@ -1,6 +1,5 @@
 export const useHanko = () => ({
-  user: {
-    getCurrent: async () => ({ id: 'some-user-id', webauthn_credentials: [] }),
-  },
-  onUserLoggedOut: (_: () => void) => {},
+  getCurrentUser: async () => ({ user_id: 'some-user-id', emails: [] }),
+  onUserLoggedOut: (_: () => void) => () => {},
+  onSessionCreated: (_: () => void) => () => {},
 })
