@@ -20,10 +20,7 @@ function logout() {
     })
       </code></pre>
     <button @click="logout">
-      Log me out by composable
-    </button>
-    <button @click="$hanko!.logout()">
-      Log me out by provide
+      Log me out
     </button>
   </div>
 </template>

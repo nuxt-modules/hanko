@@ -3,9 +3,9 @@ definePageMeta({
   middleware: ['hanko-logged-in'],
 })
 
-const { $hanko } = useNuxtApp()
+const hanko = useHanko()
 function logout() {
-  $hanko!.logout()
+  hanko!.logout()
 }
 
 const result = ref()
