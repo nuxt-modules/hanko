@@ -20,17 +20,11 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm install
 
-      - name: 🎭 Install playwright
-        run: pnpm exec playwright install
-
       - name: 🚧 Set up project
         run: pnpm dev:prepare
 
       - name: 🔠 Fix lint errors
         run: pnpm run lint
-
-      - name: 🧪 Update snapshots
-        run: pnpm test -u
 
       - uses: autofix-ci/action@7a166d7532b277f34e16238930461bf77f9d7ed8 # 7a166d7532b277f34e16238930461bf77f9d7ed8
 
