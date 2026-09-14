@@ -7,7 +7,7 @@ declare module 'vue' {
        * Currently supported values are "en" for English and "de" for German.
        * If the value is omitted, "en" is used.
        */
-      lang?: 'en' | 'de' | (string & {})
+      lang?: 'bn' | 'de' | 'en' | 'fr' | 'it' | 'pt-BR' | 'zh' | (string & {})
       /** A space-separated list of experimental features to be enabled. See experimental features. */
       experimental?: string
     }>
@@ -16,7 +16,7 @@ declare module 'vue' {
        * Currently supported values are "en" for English and "de" for German.
        * If the value is omitted, "en" is used.
        */
-      lang?: 'en' | 'de' | (string & {})
+      lang?: 'bn' | 'de' | 'en' | 'fr' | 'it' | 'pt-BR' | 'zh' | (string & {})
     }>
     HankoEvents: DefineComponent<Record<string, unknown>>
   }

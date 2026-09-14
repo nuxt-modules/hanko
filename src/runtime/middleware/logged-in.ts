@@ -17,7 +17,7 @@ export const hankoLoggedIn = (async (to) => {
 
   const hanko = useHanko()!
 
-  if (!(await hanko.user.getCurrent().catch(() => null)) && to.path !== redirects.login) {
+  if (!(await hanko.getCurrentUser().catch(() => null)) && to.path !== redirects.login) {
     return navigateTo(withQuery(redirects.login, { redirect: to.path }))
   }
 

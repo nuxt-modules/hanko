@@ -9,6 +9,7 @@ export default createConfigForNuxt({
   dirs: {
     src: [
       './playground',
+      './playground-nuxt5',
     ],
   },
 }).append({

@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/hanko",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hanko integration for Nuxt",
   "keywords": [
     "authentication",
@@ -35,10 +35,12 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build build",
+    "prepack": "pnpm build",
+    "build": "nuxt-module-build prepare && nuxt-module-build build",
     "dev": "nuxt dev playground",
+    "dev:nuxt5": "nuxt dev playground-nuxt5",
     "dev:build": "nuxt build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground && nuxt prepare playground-nuxt5",
     "release": "pnpm lint && pnpm test && bumpp && pnpm publish",
     "lint": "pnpm lint:all:eslint",
     "lint:all:eslint": "pnpm lint:eslint .",
@@ -48,29 +50,37 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.0.0",
-    "@teamhanko/hanko-elements": "1.5.2",
-    "defu": "^6.1.4",
-    "jose": "^6.0.0",
-    "ufo": "^1.5.4"
+    "@nuxt/kit": "^4.5.2",
+    "@teamhanko/hanko-elements": "^3.0.0",
+    "defu": "^6.1.7",
+    "jose": "^6.2.12",
+    "ufo": "^1.6.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "1.15.1",
-    "@nuxt/module-builder": "1.0.2",
-    "@nuxt/schema": "4.3.1",
-    "@nuxt/test-utils": "4.0.0",
-    "@types/node": "24.10.13",
-    "@vitest/coverage-v8": "4.0.18",
-    "bumpp": "10.4.1",
-    "eslint": "10.0.1",
-    "h3": "1.15.5",
-    "nuxt": "4.3.1",
-    "playwright": "1.58.2",
-    "vitest": "4.0.18"
+    "@nuxt/eslint-config": "1.17.0",
+    "@nuxt/module-builder": "1.0.3",
+    "@nuxt/schema": "4.5.2",
+    "@nuxt/test-utils": "4.3.2",
+    "@types/node": "24.13.4",
+    "@vitest/coverage-v8": "5.0.0",
+    "bumpp": "12.3.0",
+    "eslint": "10.10.0",
+    "h3": "1.15.11",
+    "hookable": "6.1.1",
+    "nuxt": "4.5.2",
+    "playwright": "1.63.0",
+    "vitest": "5.0.0"
   },
-  "resolutions": {
-    "@nuxt/kit": "^4.0.0",
-    "@nuxtjs/hanko": "link:."
-  },
-  "packageManager": "pnpm@10.30.1"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.21.0",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.4.1",
+      "onFail": "download"
+    }
+  }
 }
