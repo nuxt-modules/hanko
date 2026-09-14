@@ -62,15 +62,26 @@
     "@nuxt/eslint-config": "1.17.0",
     "@nuxt/module-builder": "1.0.3",
     "@nuxt/schema": "4.5.2",
-    "@nuxt/test-utils": "4.2.0",
-    "@types/node": "24.13.3",
-    "@vitest/coverage-v8": "4.1.11",
-    "bumpp": "12.2.2",
-    "eslint": "10.9.1",
+    "@nuxt/test-utils": "4.3.2",
+    "@types/node": "24.13.4",
+    "@vitest/coverage-v8": "5.0.0",
+    "bumpp": "12.3.0",
+    "eslint": "10.10.0",
     "h3": "1.15.11",
     "nuxt": "4.5.2",
-    "playwright": "1.62.1",
-    "vitest": "4.1.11"
+    "playwright": "1.63.0",
+    "vitest": "5.0.0"
   },
-  "packageManager": "pnpm@11.24.0"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.0.0",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.25.0",
+      "onFail": "download"
+    }
+  }
 }
