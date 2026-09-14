@@ -53,6 +53,7 @@ export default defineNuxtConfig({
     //   translations: {},
     //   fallbackLanguage: 'en'
     // }
+    // globalMiddleware: false,
   },
 })
 ```
@@ -81,6 +82,25 @@ By default two new route middleware are available in your Nuxt app: `hanko-logge
 - `hanko-logged-out` will prevent access to a page unless you are logged out. (It will redirect you to `redirects.success` when you log in, and otherwise to `redirects.home`.)
 
 You can also create your own middleware for full control.
+
+### Global middleware
+
+If `globalMiddleware` is set to `true`, every page requires a logged in user by default. You can opt individual pages out with `definePageMeta`, setting **either** `allow` or `deny`:
+
+```ts
+definePageMeta({
+  hanko: {
+    // allow: 'all' | 'logged-in' | 'logged-out'
+    // deny: 'logged-in' | 'logged-out'
+  },
+})
+```
+
+The middleware is assigned at build time, so a page that sets `hanko-logged-in` or `hanko-logged-out` in `middleware` keeps that middleware and its `hanko` page meta is ignored. Use one or the other, not both.
+
+`hanko` page meta only applies when `globalMiddleware` is enabled.
+
+**Note**: `globalMiddleware` applies to pages only. It adds no authentication checks to your API routes.
 
 ### Auto-imports
 

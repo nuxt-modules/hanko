@@ -40,6 +40,12 @@ describe('authenticated ssr', () => {
     expect(await res.text()).toContain('<h1>Protected Page</h1>')
   })
 
+  it('renders unguarded pages', async () => {
+    const res = await fetch('/about', { headers: await cookie(), redirect: 'manual' })
+
+    expect(res.status).toBe(200)
+  })
+
   it('redirects away from the login page', async () => {
     const res = await fetch('/login', { headers: await cookie(), redirect: 'manual' })
 

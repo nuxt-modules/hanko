@@ -22,6 +22,11 @@ describe('ssr', () => {
     expect(html).toContain('<hanko-auth></hanko-auth>')
   })
 
+  it('ignores hanko page meta when the global middleware is disabled', async () => {
+    const res = await fetch('/global/allow/logged-in', { redirect: 'manual' })
+    expect(res.status).toBe(200)
+  })
+
   it('renders unguarded pages', async () => {
     const html = await $fetch<string>('/about')
     expect(html).toContain('<h1>About</h1>')

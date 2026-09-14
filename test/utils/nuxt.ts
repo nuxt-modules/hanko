@@ -1,6 +1,6 @@
 import { createHooks } from 'hookable'
 import { runWithNuxtContext } from '@nuxt/kit'
-import type { Nuxt, NuxtConfig } from '@nuxt/schema'
+import type { Nuxt, NuxtConfig, NuxtPage } from '@nuxt/schema'
 import hankoModule from '../../src/module'
 import type { ModuleOptions } from '../../src/module'
 
@@ -27,6 +27,8 @@ export async function setupModule(options: ModuleOptions = {}, overrides: Partia
       build: { templates: [] },
       runtimeConfig: { public: {} },
       vue: { compilerOptions: {} },
+      vite: {},
+      experimental: { scanPageMeta: true },
       ...overrides,
     },
   } as unknown as Nuxt
@@ -50,4 +52,9 @@ export async function resolveMiddleware(nuxt: Nuxt) {
   const app = { middleware: [] as Array<{ name: string, path: string }> }
   await nuxt.callHook('app:resolve', app as never)
   return app.middleware
+}
+
+export async function resolvePages(nuxt: Nuxt, pages: NuxtPage[]) {
+  await nuxt.callHook('pages:resolved', pages)
+  return pages
 }

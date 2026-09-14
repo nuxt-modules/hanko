@@ -11,14 +11,13 @@ function logout() {
 <template>
   <div>
     <h1>Protected Page</h1>
-    <p>
+    <div>
       Only logged in users can see this page
-    </p>
-    <pre><code>
-    definePageMeta({
-      middleware: ['hanko-logged-in'],
-    })
-      </code></pre>
+      <pre>
+definePageMeta({
+  middleware: ['hanko-logged-in'],
+})</pre>
+    </div>
     <button @click="logout">
       Log me out
     </button>

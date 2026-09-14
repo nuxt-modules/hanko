@@ -19,14 +19,13 @@ async function tryAuthenticatedRequest() {
 <template>
   <main>
     <h1>You are logged in!</h1>
-    <p>
+    <div>
       Only logged in users can see this page
-    </p>
-    <pre><code>
-    definePageMeta({
-      middleware: ['hanko-logged-in'],
-    })
-      </code></pre>
+      <pre>
+definePageMeta({
+  middleware: ['hanko-logged-in'],
+})</pre>
+    </div>
     <button @click="logout">
       Log me out
     </button>

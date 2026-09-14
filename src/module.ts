@@ -1,5 +1,5 @@
-import type { PublicRuntimeConfig } from 'nuxt/schema'
-import { defineNuxtModule, addPlugin, createResolver, addImportsSources, addRouteMiddleware, addServerHandler, addServerImports, addTemplate, getNuxtVersion } from '@nuxt/kit'
+import type { NuxtPage, PublicRuntimeConfig } from 'nuxt/schema'
+import { defineNuxtModule, addPlugin, createResolver, addImportsSources, addRouteMiddleware, addServerHandler, addServerImports, addTemplate, addTypeTemplate, getNuxtVersion, useLogger } from '@nuxt/kit'
 import type { CookieSameSite, RegisterOptions } from '@teamhanko/hanko-elements'
 import { defu } from 'defu'
 
@@ -10,6 +10,7 @@ export interface ModuleOptions {
   apiURL?: string
   registerComponents?: boolean
   augmentContext?: boolean
+  globalMiddleware?: boolean
   cookieName?: string
   cookieSameSite?: CookieSameSite
   cookieDomain?: string
@@ -42,6 +43,7 @@ export default defineNuxtModule<ModuleOptions>({
     apiURL: '',
     registerComponents: true,
     augmentContext: true,
+    globalMiddleware: false,
     cookieName: 'hanko',
     redirects: {
       login: '/login',
@@ -89,6 +91,31 @@ export default defineNuxtModule<ModuleOptions>({
         references.push({
           path: resolver.resolve('./runtime/components.d.ts'),
         })
+      })
+    }
+
+    if (options.globalMiddleware) {
+      if (!nuxt.options.experimental.scanPageMeta) {
+        logger.warn('`hanko.globalMiddleware` requires `experimental.scanPageMeta`. Pages cannot opt out with `hanko` page meta while it is disabled.')
+      }
+
+      nuxt.options.experimental.extraPageMetaExtractionKeys ||= []
+      nuxt.options.experimental.extraPageMetaExtractionKeys.push('hanko')
+
+      nuxt.hook('pages:resolved', guardPages)
+
+      addTypeTemplate({
+        filename: 'types/hanko-page-meta.d.ts',
+        getContents: () => `declare module 'nuxt/app' {
+  interface PageMeta {
+    hanko?:
+      | { allow?: 'all' | 'logged-in' | 'logged-out', deny?: never }
+      | { allow?: never, deny?: 'logged-in' | 'logged-out' }
+  }
+}
+
+export {}
+`,
       })
     }
 
@@ -147,6 +174,30 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
 })
+
+const logger = useLogger('@nuxtjs/hanko')
+
+const hankoMiddleware = ['hanko-logged-in', 'hanko-logged-out']
+
+/** Assigns a hanko middleware to every page that does not opt out through its `hanko` page meta. */
+function guardPages(pages: NuxtPage[]) {
+  for (const page of pages) {
+    if (page.children?.length) guardPages(page.children)
+    if (!page.file) continue
+
+    const middleware = [page.meta?.middleware ?? []].flat()
+    if (middleware.some(name => typeof name === 'string' && hankoMiddleware.includes(name))) continue
+
+    const { allow, deny } = page.meta?.hanko ?? {}
+    if (allow === 'all') continue
+
+    page.meta ||= {}
+    page.meta.middleware = [
+      ...middleware,
+      allow === 'logged-out' || deny === 'logged-in' ? 'hanko-logged-out' : 'hanko-logged-in',
+    ]
+  }
+}
 
 declare module '@nuxt/schema' {
   interface PublicRuntimeConfig {
