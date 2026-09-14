@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "nuxt-hanko-playground-nuxt5",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "devDependencies": {
+    "@nuxtjs/hanko": "latest",
+    "nuxt": "npm:nuxt-nightly@5x"
+  }
+}

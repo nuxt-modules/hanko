@@ -1,5 +1,6 @@
 packages:
   - "playground"
+  - "playground-nuxt5"
 
 allowBuilds:
   "@parcel/watcher": false
@@ -7,8 +8,16 @@ allowBuilds:
   unrs-resolver: false
 
 overrides:
-  "@nuxt/kit": "^4.5.2"
   "@nuxtjs/hanko": "workspace:*"
+  "@nuxtjs/hanko>@nuxt/kit": "^4.5.2"
+  nuxt-hanko-playground>nuxt: 4.5.2
+  nuxt-hanko-playground-nuxt5>nuxt: npm:nuxt-nightly@5x
+  "nuxt-nightly>@nuxt/kit": npm:@nuxt/kit-nightly@5x
+  "nuxt-nightly>@nuxt/schema": npm:@nuxt/schema-nightly@5x
+  "nuxt-nightly>@nuxt/vite-builder": npm:@nuxt/vite-builder-nightly@5x
+  "nuxt-nightly>@nuxt/nitro-server": npm:@nuxt/nitro-server-nightly@5x
+  "@nuxt/vite-builder-nightly>@nuxt/kit": npm:@nuxt/kit-nightly@5x
+  "@nuxt/nitro-server-nightly>@nuxt/kit": npm:@nuxt/kit-nightly@5x
 
 shamefullyHoist: true
 
