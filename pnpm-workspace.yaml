@@ -2,12 +2,12 @@ packages:
   - "playground"
 
 allowBuilds:
-  '@parcel/watcher': false
+  "@parcel/watcher": false
   esbuild: false
   unrs-resolver: false
 
 overrides:
-  "@nuxt/kit": "^4.0.0"
+  "@nuxt/kit": "^4.5.2"
   "@nuxtjs/hanko": "workspace:*"
 
 shamefullyHoist: true

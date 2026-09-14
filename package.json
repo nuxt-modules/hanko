@@ -49,11 +49,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.0.0",
+    "@nuxt/kit": "^4.5.2",
     "@teamhanko/hanko-elements": "^3.0.0",
-    "defu": "^6.1.4",
-    "jose": "^6.0.0",
-    "ufo": "^1.5.4"
+    "defu": "^6.1.7",
+    "jose": "^6.2.12",
+    "ufo": "^1.6.4"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "1.17.0",
@@ -72,12 +72,12 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "^24.0.0",
+      "version": "^24.21.0",
       "onFail": "download"
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "11.25.0",
+      "version": "11.27.0",
       "onFail": "download"
     }
   }
