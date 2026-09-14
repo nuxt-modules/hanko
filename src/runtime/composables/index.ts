@@ -1,5 +1,11 @@
 import { Hanko } from '@teamhanko/hanko-elements'
-import { useRuntimeConfig } from '#imports'
+import { useNuxtApp, useRuntimeConfig } from '#imports'
+
+declare module '#app' {
+  interface NuxtApp {
+    _hanko?: Hanko
+  }
+}
 
 /**
  * This composable returns a Hanko instance.
@@ -11,11 +17,17 @@ export function useHanko() {
     return null
   }
 
+  const nuxtApp = useNuxtApp()
+  if (nuxtApp._hanko) {
+    return nuxtApp._hanko
+  }
+
   const hankoConfig = useRuntimeConfig().public.hanko
-  return new Hanko(hankoConfig.apiURL, {
+  nuxtApp._hanko = new Hanko(hankoConfig.apiURL, {
     cookieName: hankoConfig.cookieName,
     localStorageKey: hankoConfig.storageKey,
     cookieSameSite: hankoConfig.cookieSameSite,
     cookieDomain: hankoConfig.cookieDomain,
   })
+  return nuxtApp._hanko
 }

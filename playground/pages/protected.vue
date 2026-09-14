@@ -4,7 +4,7 @@ definePageMeta({
 })
 const hanko = useHanko()
 function logout() {
-  hanko!.user.logout()
+  hanko!.logout()
 }
 </script>
 
@@ -12,10 +12,13 @@ function logout() {
   <div>
     <h1>Protected Page</h1>
     <p>
-      Only logged in users can see this page<pre>definePageMeta({
-  middleware: ['hanko-logged-in'],
-})</pre>
+      Only logged in users can see this page
     </p>
+    <pre><code>
+    definePageMeta({
+      middleware: ['hanko-logged-in'],
+    })
+      </code></pre>
     <button @click="logout">
       Log me out
     </button>

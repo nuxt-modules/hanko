@@ -88,7 +88,7 @@ You can also create your own middleware for full control.
 
 ### Server utilities
 
-By default you can access a verified JWT context on `event.context.hanko`. (It will be undefined if the user is not logged in.) If you want to handle this yourself you can set `augmentContext: false`.
+By default, you can access a verified JWT context on `event.context.hanko`. (It will be undefined if the user is not logged in.) If you want to handle this yourself you can set `augmentContext: false`.
 
 `verifyHankoEvent` is exposed in the Nitro part of your app to expose the underlying utility used to create `event.context.hanko` if you want to handle things manually.
 
