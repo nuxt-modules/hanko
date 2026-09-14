@@ -4,7 +4,7 @@ definePageMeta({
 })
 const hanko = useHanko()
 function logout() {
-  hanko!.user.logout()
+  hanko!.logout()
 }
 </script>
 
