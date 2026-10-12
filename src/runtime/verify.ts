@@ -2,7 +2,7 @@ import { createRemoteJWKSet, jwtVerify } from 'jose'
 import type { HankoPayload } from './auth'
 
 export interface HankoServerHelpers<Event> {
-  createError: (input: { statusCode: number }) => Error
+  createError: (input: { status: number }) => Error
   getCookie: (event: Event, name: string) => string | undefined
   getRequestHeader: (event: Event, name: string) => string | undefined
   useRuntimeConfig: () => { public: { hanko: { apiURL: string, cookieName: string } } }
@@ -17,7 +17,7 @@ export function createHankoEventVerifier<Event>(helpers: HankoServerHelpers<Even
       || helpers.getCookie(event, hankoConfig.cookieName)
 
     if (!jwt) {
-      throw helpers.createError({ statusCode: 401 })
+      throw helpers.createError({ status: 401 })
     }
 
     return await jwtVerify<HankoPayload>(jwt, JWKS).then(r => r.payload)

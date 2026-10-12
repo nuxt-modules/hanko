@@ -1,5 +1,5 @@
 import type { NuxtPage, PublicRuntimeConfig } from 'nuxt/schema'
-import { defineNuxtModule, addPlugin, createResolver, addImportsSources, addRouteMiddleware, addServerHandler, addServerImports, addTemplate, addTypeTemplate, getNuxtVersion, useLogger } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addImportsSources, addRouteMiddleware, addServerHandler, addServerImports, addTemplate, addTypeTemplate, resolveServerVariant, useLogger } from '@nuxt/kit'
 import type { CookieSameSite, RegisterOptions } from '@teamhanko/hanko-elements'
 import { defu } from 'defu'
 
@@ -55,11 +55,8 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    // Nuxt 5 server code imports from `nuxt/server`; earlier versions use `h3` and `#imports`
-    const isNuxt5 = Number.parseInt(getNuxtVersion(nuxt)) >= 5
-    const serverDir = resolver.resolve(isNuxt5 ? './runtime/server-nuxt5' : './runtime/server')
-    const serverUtils = resolver.resolve(serverDir, './utils/index')
-    const serverMiddleware = resolver.resolve(serverDir, './middleware/auth')
+    const isNitro2 = resolveServerVariant({ nuxt: false, nitro2: true })
+    const serverDir = resolver.resolve('./runtime/server')
 
     const isCustomElement = nuxt.options.vue.compilerOptions.isCustomElement
     nuxt.options.vue.compilerOptions.isCustomElement = (tag: string) =>
@@ -123,13 +120,16 @@ export {}
       addServerHandler({
         middleware: true,
         // Nitro v3 requires every handler to declare the routes it runs on
-        ...isNuxt5 ? { route: '/**' } : {},
-        handler: serverMiddleware,
+        ...isNitro2 ? {} : { route: '/**' },
+        handler: {
+          nuxt: resolver.resolve(serverDir, './middleware/auth'),
+          nitro2: resolver.resolve(serverDir, './middleware/auth.legacy'),
+        },
       })
-      nuxt.hook('prepare:types', ({ references }) => {
-        references.push({
-          path: resolver.resolve('./runtime/auth.d.ts'),
-        })
+      nuxt.hook('prepare:types', ({ references, serverReferences }) => {
+        const reference = { path: resolver.resolve('./runtime/auth.d.ts') }
+        references.push(reference)
+        serverReferences?.push(reference)
       })
     }
 
@@ -163,9 +163,15 @@ export {}
     })
 
     // Add Nitro composables
-    addServerImports([{ name: 'verifyHankoEvent', from: serverUtils }])
+    addServerImports([{
+      name: 'verifyHankoEvent',
+      from: {
+        nuxt: resolver.resolve(serverDir, './utils/index'),
+        nitro2: resolver.resolve(serverDir, './utils/index.legacy'),
+      },
+    }])
 
-    if (!isNuxt5) {
+    if (isNitro2) {
       nuxt.hook('nitro:config', (config) => {
         config.externals = defu(config.externals, {
           inline: [serverDir, resolver.resolve('./runtime/verify')],
@@ -188,7 +194,7 @@ function guardPages(pages: NuxtPage[]) {
     const middleware = [page.meta?.middleware ?? []].flat()
     if (middleware.some(name => typeof name === 'string' && hankoMiddleware.includes(name))) continue
 
-    const { allow, deny } = page.meta?.hanko ?? {}
+    const { allow, deny } = (page.meta?.hanko ?? {}) as { allow?: string, deny?: string }
     if (allow === 'all') continue
 
     page.meta ||= {}

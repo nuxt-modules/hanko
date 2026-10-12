@@ -1,4 +1,4 @@
-import { defineEventHandler } from 'h3'
+import { defineEventHandler } from 'nuxt/server'
 import { verifyHankoEvent } from '../utils/index'
 
 export default defineEventHandler(async (event) => {

@@ -160,7 +160,7 @@ describe('server integration', () => {
 
     expect(nuxt.options.serverHandlers).toContainEqual(expect.objectContaining({
       middleware: true,
-      handler: expect.stringContaining('runtime/server/middleware/auth'),
+      handler: expect.stringContaining('runtime/server/middleware/auth.legacy'),
     }))
     expect(await resolveTypeReferences(nuxt)).toContainEqual(expect.stringContaining('runtime/auth.d.ts'))
   })
@@ -172,6 +172,14 @@ describe('server integration', () => {
     expect(await resolveTypeReferences(nuxt)).not.toContainEqual(expect.stringContaining('runtime/auth.d.ts'))
   })
 
+  it('adds context types to the server types', async () => {
+    const nuxt = await setupModule()
+    const context = { references: [], serverReferences: [] as Array<{ path: string }> }
+    await nuxt.callHook('prepare:types', context as never)
+
+    expect(context.serverReferences).toContainEqual({ path: expect.stringContaining('runtime/auth.d.ts') })
+  })
+
   it('inlines runtime server code and auto-imports verifyHankoEvent in nitro', async () => {
     const nuxt = await setupModule()
     const config: NitroConfigStub = {}
@@ -181,7 +189,7 @@ describe('server integration', () => {
     expect(config.externals!.inline).toContainEqual(expect.stringContaining('runtime/verify'))
     expect(config.imports!.imports).toHaveLength(1)
     expect(config.imports!.imports![0]!.name).toBe('verifyHankoEvent')
-    expect(config.imports!.imports![0]!.from).toContain('runtime/server/utils/index')
+    expect(config.imports!.imports![0]!.from).toContain('runtime/server/utils/index.legacy')
   })
 
   it('preserves existing nitro externals', async () => {
@@ -206,18 +214,33 @@ describe('server integration', () => {
   })
 
   it('uses nuxt/server runtime code and a wildcard route on nuxt 5', async () => {
-    const nuxt = await setupModule({}, {}, '5.0.0')
+    const nuxt = await setupModule({}, { _nitroMajor: 3 } as never, '5.0.0')
 
     expect(nuxt.options.serverHandlers).toContainEqual(expect.objectContaining({
       middleware: true,
       route: '/**',
-      handler: expect.stringContaining('runtime/server-nuxt5/middleware/auth'),
+      handler: expect.stringMatching(/runtime\/server\/middleware\/auth$/),
     }))
 
     const config: NitroConfigStub = {}
     await nuxt.callHook('nitro:config', config as never)
 
-    expect(config.imports!.imports![0]!.from).toContain('runtime/server-nuxt5/utils/index')
+    expect(config.imports!.imports![0]!.from).toMatch(/runtime\/server\/utils\/index$/)
+    expect(config.externals).toBeUndefined()
+  })
+
+  it('uses nuxt/server runtime code and a wildcard route with a non-nitro server builder', async () => {
+    const nuxt = await setupModule({}, { server: { builder: '@nuxt/vite-server' } } as never)
+
+    expect(nuxt.options.serverHandlers).toContainEqual(expect.objectContaining({
+      middleware: true,
+      route: '/**',
+      handler: expect.stringMatching(/runtime\/server\/middleware\/auth$/),
+    }))
+
+    const config: NitroConfigStub = {}
+    await nuxt.callHook('nitro:config', config as never)
+
     expect(config.externals).toBeUndefined()
   })
 

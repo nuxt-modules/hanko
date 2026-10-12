@@ -26,12 +26,40 @@ describe('nuxt 5', () => {
     expect(html).toContain('<hanko-auth></hanko-auth>')
   })
 
+  it('renders unguarded pages', async () => {
+    const html = await $fetch<string>('/about')
+    expect(html).toContain('<h1>About</h1>')
+  })
+
+  it('does not redirect logged out users away from the login page', async () => {
+    const res = await fetch('/login', { redirect: 'manual' })
+    expect(res.status).toBe(200)
+  })
+
+  it('leaves the request context unauthenticated without a token', async () => {
+    expect(await $fetch('/api/test')).toStrictEqual({})
+  })
+
+  it('leaves the request context unauthenticated for an invalid token', async () => {
+    const res = await $fetch('/api/test', { headers: { cookie: 'hanko=not-a-jwt' } })
+    expect(res).toStrictEqual({})
+  })
+
   it('populates the request context from a valid token', async () => {
-    const res = await $fetch<{ hanko?: { sub: string } }>('/api/test', {
+    const res = await $fetch<{ hanko?: { sub: string, email: { address: string } } }>('/api/test', {
       headers: await cookie({ sub: 'session-user' }),
     })
 
     expect(res.hanko?.sub).toBe('session-user')
+    expect(res.hanko?.email.address).toBe('test@example.com')
+  })
+
+  it('accepts a bearer token', async () => {
+    const res = await $fetch<{ hanko?: { sub: string } }>('/api/test', {
+      headers: { authorization: `Bearer ${await jwks.sign({ sub: 'bearer-user' })}` },
+    })
+
+    expect(res.hanko?.sub).toBe('bearer-user')
   })
 
   it('renders guarded pages for logged in users', async () => {
@@ -45,5 +73,19 @@ describe('nuxt 5', () => {
     const res = await fetch('/login', { headers: await cookie(), redirect: 'manual' })
 
     expect(res.headers.get('location')).toBe('/')
+  })
+
+  it('rejects an expired token', async () => {
+    const jwt = await jwks.sign({ sub: 'expired-user' }, { expiresIn: '-1h' })
+    const res = await fetch('/protected', { headers: { cookie: `hanko=${jwt}` }, redirect: 'manual' })
+
+    expect(decodeURIComponent(res.headers.get('location')!)).toBe('/login?redirect=/protected')
+  })
+
+  it('rejects a token signed by an unknown key', async () => {
+    const jwt = await jwks.signWithForeignKey()
+    const res = await fetch('/protected', { headers: { cookie: `hanko=${jwt}` }, redirect: 'manual' })
+
+    expect(decodeURIComponent(res.headers.get('location')!)).toBe('/login?redirect=/protected')
   })
 })
