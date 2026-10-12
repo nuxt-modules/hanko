@@ -1,4 +1,4 @@
 export default defineNuxtConfig({
-  extends: ['../playground'],
+  modules: ['@nuxtjs/hanko'],
   compatibilityDate: '2024-08-19',
 })

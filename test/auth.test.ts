@@ -56,13 +56,13 @@ describe('authenticated ssr', () => {
     const jwt = await jwks.sign({ sub: 'expired-user' }, { expiresIn: '-1h' })
     const res = await fetch('/protected', { headers: { cookie: `hanko=${jwt}` }, redirect: 'manual' })
 
-    expect(res.headers.get('location')).toBe('/login?redirect=/protected')
+    expect(decodeURIComponent(res.headers.get('location')!)).toBe('/login?redirect=/protected')
   })
 
   it('rejects a token signed by an unknown key', async () => {
     const jwt = await jwks.signWithForeignKey()
     const res = await fetch('/protected', { headers: { cookie: `hanko=${jwt}` }, redirect: 'manual' })
 
-    expect(res.headers.get('location')).toBe('/login?redirect=/protected')
+    expect(decodeURIComponent(res.headers.get('location')!)).toBe('/login?redirect=/protected')
   })
 })

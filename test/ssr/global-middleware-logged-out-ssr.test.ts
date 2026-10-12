@@ -8,7 +8,7 @@ await setup({
 })
 
 const location = async (path: string) =>
-  (await fetch(path, { redirect: 'manual' })).headers.get('location')
+  decodeURIComponent((await fetch(path, { redirect: 'manual' })).headers.get('location')!)
 
 describe('Global middleware, not logged in, ssr', () => {
   it('hanko-logged-in middleware redirects to the login page', async () => {

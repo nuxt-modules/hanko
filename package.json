@@ -38,9 +38,9 @@
     "prepack": "pnpm build",
     "build": "nuxt-module-build prepare && nuxt-module-build build",
     "dev": "nuxt dev playground",
-    "dev:nuxt5": "nuxt dev playground-nuxt5",
+    "dev:nuxt5": "pnpm --filter nuxt-hanko-playground-nuxt5 dev",
     "dev:build": "nuxt build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground && nuxt prepare playground-nuxt5",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground && pnpm --filter nuxt-hanko-playground-nuxt5 exec nuxt prepare",
     "release": "pnpm lint && pnpm test && bumpp && pnpm publish",
     "lint": "pnpm lint:all:eslint",
     "lint:all:eslint": "pnpm lint:eslint .",
@@ -50,7 +50,7 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.5.2",
+    "@nuxt/kit": "^4.6.1",
     "@teamhanko/hanko-elements": "^3.0.0",
     "defu": "^6.1.7",
     "jose": "^6.2.12",
@@ -59,7 +59,7 @@
   "devDependencies": {
     "@nuxt/eslint-config": "1.17.0",
     "@nuxt/module-builder": "1.0.3",
-    "@nuxt/schema": "4.5.2",
+    "@nuxt/schema": "4.6.1",
     "@nuxt/test-utils": "4.3.3",
     "@types/node": "24.19.2",
     "@vitest/coverage-v8": "5.0.3",
@@ -67,7 +67,7 @@
     "eslint": "10.12.0",
     "h3": "1.15.11",
     "hookable": "6.1.2",
-    "nuxt": "4.5.2",
+    "nuxt": "4.6.1",
     "playwright": "1.64.0",
     "vitest": "5.0.3"
   },

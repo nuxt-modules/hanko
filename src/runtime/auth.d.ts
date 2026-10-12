@@ -17,3 +17,9 @@ declare module 'h3' {
     hanko?: HankoPayload
   }
 }
+
+declare module '@nuxt/schema' {
+  interface RequestEventContext {
+    hanko?: HankoPayload
+  }
+}

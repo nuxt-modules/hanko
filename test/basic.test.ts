@@ -9,12 +9,12 @@ await setup({
 describe('ssr', () => {
   it('redirects to the login page', async () => {
     const res = await fetch('/protected', { redirect: 'manual' })
-    expect(res.headers.get('location')).toBe('/login?redirect=/protected')
+    expect(decodeURIComponent(res.headers.get('location')!)).toBe('/login?redirect=/protected')
   })
 
   it('preserves the requested path in the redirect query', async () => {
     const res = await fetch('/user', { redirect: 'manual' })
-    expect(res.headers.get('location')).toBe('/login?redirect=/user')
+    expect(decodeURIComponent(res.headers.get('location')!)).toBe('/login?redirect=/user')
   })
 
   it('respects custom elements', async () => {

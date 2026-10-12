@@ -1,11 +1,10 @@
-import type { H3Event } from 'h3'
-import { createError, getCookie, getHeader } from 'h3'
+import { createError, getCookie, getRequestHeader, useRuntimeConfig } from 'nuxt/server'
+import type { RequestEvent } from 'nuxt/server'
 import { createHankoEventVerifier } from '../../verify'
-import { useRuntimeConfig } from '#imports'
 
-export const verifyHankoEvent = createHankoEventVerifier<H3Event>({
+export const verifyHankoEvent = createHankoEventVerifier<Pick<RequestEvent, 'req'>>({
   createError,
   getCookie,
-  getRequestHeader: getHeader,
+  getRequestHeader,
   useRuntimeConfig,
 })
