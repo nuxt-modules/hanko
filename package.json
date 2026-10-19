@@ -62,14 +62,14 @@
     "@nuxt/schema": "4.6.2",
     "@nuxt/test-utils": "4.3.4",
     "@types/node": "24.19.2",
-    "@vitest/coverage-v8": "5.0.3",
+    "@vitest/coverage-v8": "5.0.5",
     "bumpp": "12.3.0",
     "eslint": "10.13.0",
     "h3": "1.15.11",
     "hookable": "6.1.2",
     "nuxt": "4.6.2",
     "playwright": "1.64.1",
-    "vitest": "5.0.3"
+    "vitest": "5.0.5"
   },
   "devEngines": {
     "runtime": {
