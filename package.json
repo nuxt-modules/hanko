@@ -64,7 +64,7 @@
     "@types/node": "26.6.6",
     "@vitest/coverage-v8": "5.0.5",
     "bumpp": "12.3.0",
-    "eslint": "10.13.0",
+    "eslint": "10.14.0",
     "h3": "1.15.11",
     "hookable": "6.1.2",
     "nuxt": "4.6.3",
