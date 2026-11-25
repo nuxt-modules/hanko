@@ -224,7 +224,7 @@ importers:
         version: 4.7.0
       '@nuxt/test-utils':
         specifier: 4.4.0
-        version: 4.4.0(@nuxt/schema@4.7.0)(@oxc-project/types@0.156.0)(confbox@0.3.2)(dotenv@17.4.2)(esbuild@0.28.2)(giget@3.3.0)(h3@1.15.11)(jiti@2.7.0)(mlly@1.8.2)(nuxt@4.7.0(c89da75cab0ebb8924e62f26a37cb478))(oxc-parser@0.140.0)(playwright-core@1.65.1)(rolldown@1.2.19)(rollup@4.68.8)(vite@8.3.8)(vitest@5.1.1)(vue@3.5.46(typescript@5.9.3))
+        version: 4.4.0(@nuxt/schema@4.7.0)(@oxc-project/types@0.156.0)(confbox@0.3.2)(dotenv@17.4.2)(esbuild@0.28.2)(giget@3.3.0)(h3@2.0.8(crossws@0.4.17(srvx@1.0.8))(ocache@0.3.1))(jiti@2.7.0)(mlly@1.8.2)(nuxt@4.7.0(c89da75cab0ebb8924e62f26a37cb478))(oxc-parser@0.140.0)(playwright-core@1.65.1)(rolldown@1.2.19)(rollup@4.68.8)(vite@8.3.8)(vitest@5.1.1)(vue@3.5.46(typescript@5.9.3))
       '@types/node':
         specifier: 26.6.6
         version: 26.6.6
@@ -238,8 +238,8 @@ importers:
         specifier: 10.15.0
         version: 10.15.0(jiti@2.7.0)(supports-color@10.2.2)
       h3:
-        specifier: 1.15.11
-        version: 1.15.11
+        specifier: 2.0.8
+        version: 2.0.8(crossws@0.4.17(srvx@1.0.8))(ocache@0.3.1)
       hookable:
         specifier: 6.1.2
         version: 6.1.2
@@ -6840,7 +6840,7 @@ snapshots:
       rc9: 3.1.0
       std-env: 4.3.0
 
-  '@nuxt/test-utils@4.4.0(@nuxt/schema@4.7.0)(@oxc-project/types@0.156.0)(confbox@0.3.2)(dotenv@17.4.2)(esbuild@0.28.2)(giget@3.3.0)(h3@1.15.11)(jiti@2.7.0)(mlly@1.8.2)(nuxt@4.7.0(c89da75cab0ebb8924e62f26a37cb478))(oxc-parser@0.140.0)(playwright-core@1.65.1)(rolldown@1.2.19)(rollup@4.68.8)(vite@8.3.8)(vitest@5.1.1)(vue@3.5.46(typescript@5.9.3))':
+  '@nuxt/test-utils@4.4.0(@nuxt/schema@4.7.0)(@oxc-project/types@0.156.0)(confbox@0.3.2)(dotenv@17.4.2)(esbuild@0.28.2)(giget@3.3.0)(h3@2.0.8(crossws@0.4.17(srvx@1.0.8))(ocache@0.3.1))(jiti@2.7.0)(mlly@1.8.2)(nuxt@4.7.0(c89da75cab0ebb8924e62f26a37cb478))(oxc-parser@0.140.0)(playwright-core@1.65.1)(rolldown@1.2.19)(rollup@4.68.8)(vite@8.3.8)(vitest@5.1.1)(vue@3.5.46(typescript@5.9.3))':
     dependencies:
       '@clack/prompts': 1.8.1
       '@nuxt/devtools-kit': 3.4.4(@nuxt/schema@4.7.0)(confbox@0.3.2)(dotenv@17.4.2)(giget@3.3.0)(jiti@2.7.0)(magic-string@1.4.5)(mlly@1.8.2)(oxc-parser@0.140.0)(rolldown@1.2.19)(unplugin@3.7.0(esbuild@0.28.2)(rolldown@1.2.19)(rollup@4.68.8)(vite@8.3.8))(vite@8.3.8)
@@ -6864,7 +6864,7 @@ snapshots:
       vitest-environment-nuxt: 2.0.0
       vue: 3.5.46(typescript@5.9.3)
     optionalDependencies:
-      h3: 1.15.11
+      h3: 2.0.8(crossws@0.4.17(srvx@1.0.8))(ocache@0.3.1)
       nuxt: 4.7.0(c89da75cab0ebb8924e62f26a37cb478)
       playwright-core: 1.65.1
       vitest: 5.1.1(@types/node@26.6.6)(@vitest/coverage-v8@5.1.1)(vite@8.3.8)
@@ -10875,7 +10875,7 @@ snapshots:
 
   vitest-environment-nuxt@2.0.0:
     dependencies:
-      '@nuxt/test-utils': 4.4.0(@nuxt/schema@4.7.0)(@oxc-project/types@0.156.0)(confbox@0.3.2)(dotenv@17.4.2)(esbuild@0.28.2)(giget@3.3.0)(h3@1.15.11)(jiti@2.7.0)(mlly@1.8.2)(nuxt@4.7.0(c89da75cab0ebb8924e62f26a37cb478))(oxc-parser@0.140.0)(playwright-core@1.65.1)(rolldown@1.2.19)(rollup@4.68.8)(vite@8.3.8)(vitest@5.1.1)(vue@3.5.46(typescript@5.9.3))
+      '@nuxt/test-utils': 4.4.0(@nuxt/schema@4.7.0)(@oxc-project/types@0.156.0)(confbox@0.3.2)(dotenv@17.4.2)(esbuild@0.28.2)(giget@3.3.0)(h3@2.0.8(crossws@0.4.17(srvx@1.0.8))(ocache@0.3.1))(jiti@2.7.0)(mlly@1.8.2)(nuxt@4.7.0(c89da75cab0ebb8924e62f26a37cb478))(oxc-parser@0.140.0)(playwright-core@1.65.1)(rolldown@1.2.19)(rollup@4.68.8)(vite@8.3.8)(vitest@5.1.1)(vue@3.5.46(typescript@5.9.3))
 
   vitest@5.1.1(@types/node@26.6.6)(@vitest/coverage-v8@5.1.1)(vite@8.3.8):
     dependencies:
